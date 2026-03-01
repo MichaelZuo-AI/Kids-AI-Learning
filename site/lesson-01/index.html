@@ -251,13 +251,44 @@
 
 </div></div>
 
+<style>
+#dbg{position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(0,0,0,.95);color:#0f0;font:11px/1.4 monospace;padding:6px;max-height:45vh;overflow-y:auto}
+#dbg .e{color:#ff6b6b} #dbg .o{color:#55efc4} #dbg .w{color:#f9ca24}
+</style>
+<div id="dbg"></div>
 <script src="../vendor/reveal.js"></script>
 <script>
+var D=document.getElementById('dbg');
+function L(m,c){var d=document.createElement('div');d.className=c||'';d.textContent=m;D.appendChild(d);}
+L('Window: '+window.innerWidth+'x'+window.innerHeight);
+L('Orient: '+(window.innerWidth>window.innerHeight?'LAND':'PORT'));
+var rv=document.querySelector('.reveal');
+L('.reveal: '+rv.offsetWidth+'x'+rv.offsetHeight);
 
 Reveal.initialize({
   hash:true, slideNumber:'c/t', controls:true, progress:false,
   transition:'fade', transitionSpeed:'fast',
-});
+}).then(function(){
+  L('Reveal init: OK','o');
+  L('Slides: '+Reveal.getTotalSlides());
+  var sl=document.querySelector('.reveal .slides');
+  var slCS=window.getComputedStyle(sl);
+  L('.slides transform: '+slCS.transform);
+  L('.slides size: '+slCS.width+' x '+slCS.height);
+  var sec=document.querySelector('.reveal .slides>section');
+  var secCS=window.getComputedStyle(sec);
+  L('sec display: '+secCS.display);
+  L('sec visibility: '+secCS.visibility);
+  L('sec size: '+secCS.width+' x '+secCS.height);
+  L('sec.present: '+sec.classList.contains('present'), sec.classList.contains('present')?'o':'e');
+  var h1=document.querySelector('.reveal .slides section h1');
+  if(h1){var r=h1.getBoundingClientRect();L('h1 rect: t='+r.top.toFixed(0)+' l='+r.left.toFixed(0)+' w='+r.width.toFixed(0)+' h='+r.height.toFixed(0));}
+  L('html classes: "'+document.documentElement.className+'"');
+  L('body classes: "'+document.body.className+'"');
+  // Check .reveal after init
+  var rvCS=window.getComputedStyle(rv);
+  L('.reveal after: '+rvCS.width+' x '+rvCS.height);
+}).catch(function(e){L('Reveal FAIL: '+e.message,'e');});
 Reveal.on('slidechanged', e=>{
   const pct=(e.indexh/(Reveal.getTotalSlides()-1)*100).toFixed(1);
   document.getElementById('prog-fill').style.width=pct+'%';
@@ -270,6 +301,20 @@ function setLang(l){
   localStorage.setItem('kai-lang',l);
 }
 setLang(localStorage.getItem('kai-lang')||'cn');
+L('--- after setLang ---');
+L('body classes: "'+document.body.className+'"');
+L('html classes: "'+document.documentElement.className+'"');
+var rvFinal=window.getComputedStyle(rv);
+L('.reveal final: '+rvFinal.width+' x '+rvFinal.height);
+setTimeout(function(){
+  L('--- 500ms later ---','w');
+  var rvLate=window.getComputedStyle(rv);
+  L('.reveal: '+rvLate.width+' x '+rvLate.height);
+  var slLate=window.getComputedStyle(document.querySelector('.reveal .slides'));
+  L('.slides transform: '+slLate.transform);
+  var h1=document.querySelector('.reveal .slides section h1');
+  if(h1){var r=h1.getBoundingClientRect();L('h1 rect: t='+r.top.toFixed(0)+' l='+r.left.toFixed(0)+' w='+r.width.toFixed(0)+' h='+r.height.toFixed(0));L('h1 visible: '+(r.width>0&&r.height>0), (r.width>0&&r.height>0)?'o':'e');}
+},500);
 </script>
 </body>
 </html>
