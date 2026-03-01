@@ -3,42 +3,53 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Debug Page</title>
+  <title>Debug - Full Page Reveal Test</title>
+  <link rel="stylesheet" href="vendor/reveal.css">
+  <link rel="stylesheet" href="vendor/black.css">
+  <link rel="stylesheet" href="theme.css">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: monospace; background: #07001a; color: #0f0; padding: 16px; font-size: 14px; line-height: 1.6; }
-    h2 { color: #e056fd; margin: 16px 0 8px; }
-    .ok { color: #55efc4; }
-    .err { color: #ff6b6b; }
-    .warn { color: #f9ca24; }
-    #log { white-space: pre-wrap; word-break: break-all; }
-    #test-reveal { width: 100%; height: 300px; margin-top: 16px; border: 2px solid #e056fd; }
+    #debug-overlay {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
+      background: rgba(0,0,0,.92); color: #0f0; font-family: monospace;
+      font-size: 11px; line-height: 1.4; padding: 8px; max-height: 50vh;
+      overflow-y: auto; pointer-events: auto;
+    }
+    #debug-overlay .err { color: #ff6b6b; }
+    #debug-overlay .ok { color: #55efc4; }
+    #debug-overlay .warn { color: #f9ca24; }
+    #close-debug {
+      position: fixed; top: 4px; right: 8px; z-index: 10000;
+      background: #e056fd; color: #fff; border: none; border-radius: 4px;
+      padding: 2px 8px; font-size: 12px; cursor: pointer;
+    }
   </style>
 </head>
-<body>
+<body class="lang-cn">
 
-<h2>Debug Info</h2>
-<div id="log"></div>
+<!-- Debug overlay on top of slides -->
+<div id="debug-overlay"></div>
+<button id="close-debug" onclick="document.getElementById('debug-overlay').style.display='none';this.style.display='none';">Close Debug</button>
 
-<h2>Reveal.js Test (should show "Hello" below)</h2>
-<div id="test-reveal">
-  <div class="reveal" id="rv">
-    <div class="slides">
-      <section>
-        <h1 style="color:#fff">Hello from Reveal.js!</h1>
-        <p style="color:#ccc">If you can see this, Reveal works.</p>
-      </section>
-      <section>
-        <h1 style="color:#fff">Slide 2</h1>
-      </section>
-    </div>
-  </div>
-</div>
+<!-- Exact same structure as lesson pages -->
+<div class="reveal">
+<div class="slides">
 
-<link rel="stylesheet" href="vendor/reveal.css">
-<link rel="stylesheet" href="vendor/black.css">
+<section data-background="linear-gradient(135deg,#1a0033 0%,#2d1b69 50%,#4a1a8a 100%)">
+  <h1>Debug Slide 1</h1>
+  <p>If you see this text, Reveal.js works in full-page mode!</p>
+  <p style="color:var(--gold)">Orientation test - rotate your phone to compare.</p>
+</section>
+
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <h2>Slide 2</h2>
+  <p>Swipe to navigate between slides.</p>
+</section>
+
+</div></div>
+
+<script src="vendor/reveal.js"></script>
 <script>
-var log = document.getElementById('log');
+var log = document.getElementById('debug-overlay');
 function L(msg, cls) {
   var d = document.createElement('div');
   d.className = cls || '';
@@ -46,100 +57,100 @@ function L(msg, cls) {
   log.appendChild(d);
 }
 
-// Basic info
-L('User Agent: ' + navigator.userAgent);
+L('=== BEFORE Reveal.initialize() ===');
+L('UA: ' + navigator.userAgent.substring(0, 80));
 L('Screen: ' + screen.width + 'x' + screen.height);
-L('Window inner: ' + window.innerWidth + 'x' + window.innerHeight);
-L('Document client: ' + document.documentElement.clientWidth + 'x' + document.documentElement.clientHeight);
-L('Device pixel ratio: ' + window.devicePixelRatio);
+L('Window: ' + window.innerWidth + 'x' + window.innerHeight);
+L('Orientation: ' + (window.innerWidth > window.innerHeight ? 'LANDSCAPE' : 'PORTRAIT'));
 
-// Check CSS loaded
-var sheets = document.styleSheets;
+var html = document.documentElement;
+var body = document.body;
+var reveal = document.querySelector('.reveal');
+var slides = document.querySelector('.reveal .slides');
+
+L('html size: ' + html.clientWidth + 'x' + html.clientHeight);
+L('body size: ' + body.clientWidth + 'x' + body.clientHeight);
+L('html classes: "' + html.className + '"');
+
+var revealCS = window.getComputedStyle(reveal);
+L('.reveal size: ' + revealCS.width + ' x ' + revealCS.height);
+L('.reveal position: ' + revealCS.position);
+L('.reveal overflow: ' + revealCS.overflow);
+
 L('');
-L('Stylesheets loaded: ' + sheets.length);
-for (var i = 0; i < sheets.length; i++) {
-  try {
-    var href = sheets[i].href || '(inline)';
-    var rules = sheets[i].cssRules ? sheets[i].cssRules.length : '?';
-    L('  [' + i + '] ' + href + ' (' + rules + ' rules)', 'ok');
-  } catch(e) {
-    L('  [' + i + '] ' + (sheets[i].href || '(inline)') + ' - BLOCKED: ' + e.message, 'err');
+L('=== Initializing Reveal... ===');
+
+Reveal.initialize({
+  hash: true, slideNumber: 'c/t', controls: true, progress: false,
+  transition: 'fade', transitionSpeed: 'fast',
+}).then(function() {
+  L('Reveal.initialize(): SUCCESS', 'ok');
+  L('Total slides: ' + Reveal.getTotalSlides());
+
+  L('');
+  L('=== AFTER Reveal.initialize() ===');
+  L('html classes: "' + html.className + '"');
+  L('html size: ' + html.clientWidth + 'x' + html.clientHeight);
+  L('body size: ' + body.clientWidth + 'x' + body.clientHeight);
+
+  var revealCS2 = window.getComputedStyle(reveal);
+  L('.reveal size: ' + revealCS2.width + ' x ' + revealCS2.height);
+
+  var slidesCS = window.getComputedStyle(slides);
+  L('.slides transform: ' + slidesCS.transform);
+  L('.slides size: ' + slidesCS.width + ' x ' + slidesCS.height);
+
+  var sec = document.querySelector('.reveal .slides > section');
+  if (sec) {
+    var secCS = window.getComputedStyle(sec);
+    L('section display: ' + secCS.display);
+    L('section visibility: ' + secCS.visibility);
+    L('section opacity: ' + secCS.opacity);
+    L('section size: ' + secCS.width + ' x ' + secCS.height);
+    L('section transform: ' + secCS.transform);
+
+    // Check if section has .present class
+    L('section.present: ' + sec.classList.contains('present'), sec.classList.contains('present') ? 'ok' : 'err');
   }
-}
 
-// Check reveal.css loaded by testing a known rule
-var testEl = document.querySelector('.reveal');
-var testStyle = window.getComputedStyle(testEl);
-L('');
-L('.reveal computed overflow: ' + testStyle.overflow);
-L('.reveal computed position: ' + testStyle.position);
-L('.reveal computed width: ' + testStyle.width);
-L('.reveal computed height: ' + testStyle.height);
-
-// Check html/body dimensions
-var htmlStyle = window.getComputedStyle(document.documentElement);
-var bodyStyle = window.getComputedStyle(document.body);
-L('');
-L('html height: ' + htmlStyle.height);
-L('html overflow: ' + htmlStyle.overflow);
-L('body height: ' + bodyStyle.height);
-L('body overflow: ' + bodyStyle.overflow);
-</script>
-
-<script src="vendor/reveal.js"></script>
-<script>
-// Check Reveal loaded
-L('');
-if (typeof Reveal !== 'undefined') {
-  L('Reveal.js: LOADED', 'ok');
-  L('Reveal version: ' + (Reveal.VERSION || 'unknown'));
-
-  try {
-    var rv = document.getElementById('rv');
-    // For embedded mode test
-    var deck = new Reveal(rv, {
-      embedded: true,
-      controls: true,
-      slideNumber: 'c/t',
-      width: '100%',
-      height: '100%',
-    });
-    deck.initialize().then(function() {
-      L('Reveal.initialize(): SUCCESS', 'ok');
-      L('Total slides: ' + deck.getTotalSlides());
-
-      // Check slides element
-      var slides = rv.querySelector('.slides');
-      var slidesStyle = window.getComputedStyle(slides);
-      L('.slides transform: ' + slidesStyle.transform);
-      L('.slides width: ' + slidesStyle.width);
-      L('.slides height: ' + slidesStyle.height);
-
-      // Check first section
-      var section = rv.querySelector('section');
-      var secStyle = window.getComputedStyle(section);
-      L('section[0] display: ' + secStyle.display);
-      L('section[0] visibility: ' + secStyle.visibility);
-      L('section[0] opacity: ' + secStyle.opacity);
-      L('section[0] width: ' + secStyle.width);
-      L('section[0] height: ' + secStyle.height);
-    }).catch(function(e) {
-      L('Reveal.initialize() FAILED: ' + e.message, 'err');
-    });
-  } catch(e) {
-    L('Reveal error: ' + e.message, 'err');
-    L('Stack: ' + e.stack, 'err');
+  // Check computed scale
+  var transform = slidesCS.transform;
+  if (transform && transform !== 'none') {
+    // Extract scale from matrix
+    var match = transform.match(/matrix\(([^,]+)/);
+    if (match) L('Computed scale: ' + parseFloat(match[1]).toFixed(3), 'warn');
   }
-} else {
-  L('Reveal.js: NOT LOADED', 'err');
-}
 
-// Also test full-page mode like the lessons use
-L('');
-L('--- Full-page test ---');
-var htmlClasses = document.documentElement.className;
-L('html classes: "' + htmlClasses + '"');
+  // Test if content is actually in viewport
+  var h1 = document.querySelector('.reveal .slides section h1');
+  if (h1) {
+    var rect = h1.getBoundingClientRect();
+    L('');
+    L('h1 bounding rect: top=' + rect.top.toFixed(0) + ' left=' + rect.left.toFixed(0) + ' w=' + rect.width.toFixed(0) + ' h=' + rect.height.toFixed(0));
+    var inView = rect.top >= -rect.height && rect.top <= window.innerHeight && rect.left >= -rect.width && rect.left <= window.innerWidth;
+    L('h1 in viewport: ' + inView, inView ? 'ok' : 'err');
+  }
+}).catch(function(e) {
+  L('Reveal.initialize() FAILED: ' + e.message, 'err');
+});
+
+// Listen for orientation change
+window.addEventListener('resize', function() {
+  L('');
+  L('=== RESIZE EVENT ===', 'warn');
+  L('Window: ' + window.innerWidth + 'x' + window.innerHeight);
+  L('Orientation: ' + (window.innerWidth > window.innerHeight ? 'LANDSCAPE' : 'PORTRAIT'));
+  var revealCS3 = window.getComputedStyle(reveal);
+  L('.reveal size: ' + revealCS3.width + ' x ' + revealCS3.height);
+  var slidesCS3 = window.getComputedStyle(slides);
+  L('.slides transform: ' + slidesCS3.transform);
+  var h1 = document.querySelector('.reveal .slides section h1');
+  if (h1) {
+    var rect = h1.getBoundingClientRect();
+    L('h1 rect: top=' + rect.top.toFixed(0) + ' left=' + rect.left.toFixed(0) + ' w=' + rect.width.toFixed(0) + ' h=' + rect.height.toFixed(0));
+    L('h1 in viewport: ' + (rect.top >= -rect.height && rect.top <= window.innerHeight), (rect.top >= -rect.height && rect.top <= window.innerHeight) ? 'ok' : 'err');
+  }
+});
 </script>
-
 </body>
 </html>
