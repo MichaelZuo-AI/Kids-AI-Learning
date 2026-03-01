@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Debug Page</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: monospace; background: #07001a; color: #0f0; padding: 16px; font-size: 14px; line-height: 1.6; }
+    h2 { color: #e056fd; margin: 16px 0 8px; }
+    .ok { color: #55efc4; }
+    .err { color: #ff6b6b; }
+    .warn { color: #f9ca24; }
+    #log { white-space: pre-wrap; word-break: break-all; }
+    #test-reveal { width: 100%; height: 300px; margin-top: 16px; border: 2px solid #e056fd; }
+  </style>
+</head>
+<body>
+
+<h2>Debug Info</h2>
+<div id="log"></div>
+
+<h2>Reveal.js Test (should show "Hello" below)</h2>
+<div id="test-reveal">
+  <div class="reveal" id="rv">
+    <div class="slides">
+      <section>
+        <h1 style="color:#fff">Hello from Reveal.js!</h1>
+        <p style="color:#ccc">If you can see this, Reveal works.</p>
+      </section>
+      <section>
+        <h1 style="color:#fff">Slide 2</h1>
+      </section>
+    </div>
+  </div>
+</div>
+
+<link rel="stylesheet" href="vendor/reveal.css">
+<link rel="stylesheet" href="vendor/black.css">
+<script>
+var log = document.getElementById('log');
+function L(msg, cls) {
+  var d = document.createElement('div');
+  d.className = cls || '';
+  d.textContent = msg;
+  log.appendChild(d);
+}
+
+// Basic info
+L('User Agent: ' + navigator.userAgent);
+L('Screen: ' + screen.width + 'x' + screen.height);
+L('Window inner: ' + window.innerWidth + 'x' + window.innerHeight);
+L('Document client: ' + document.documentElement.clientWidth + 'x' + document.documentElement.clientHeight);
+L('Device pixel ratio: ' + window.devicePixelRatio);
+
+// Check CSS loaded
+var sheets = document.styleSheets;
+L('');
+L('Stylesheets loaded: ' + sheets.length);
+for (var i = 0; i < sheets.length; i++) {
+  try {
+    var href = sheets[i].href || '(inline)';
+    var rules = sheets[i].cssRules ? sheets[i].cssRules.length : '?';
+    L('  [' + i + '] ' + href + ' (' + rules + ' rules)', 'ok');
+  } catch(e) {
+    L('  [' + i + '] ' + (sheets[i].href || '(inline)') + ' - BLOCKED: ' + e.message, 'err');
+  }
+}
+
+// Check reveal.css loaded by testing a known rule
+var testEl = document.querySelector('.reveal');
+var testStyle = window.getComputedStyle(testEl);
+L('');
+L('.reveal computed overflow: ' + testStyle.overflow);
+L('.reveal computed position: ' + testStyle.position);
+L('.reveal computed width: ' + testStyle.width);
+L('.reveal computed height: ' + testStyle.height);
+
+// Check html/body dimensions
+var htmlStyle = window.getComputedStyle(document.documentElement);
+var bodyStyle = window.getComputedStyle(document.body);
+L('');
+L('html height: ' + htmlStyle.height);
+L('html overflow: ' + htmlStyle.overflow);
+L('body height: ' + bodyStyle.height);
+L('body overflow: ' + bodyStyle.overflow);
+</script>
+
+<script src="vendor/reveal.js"></script>
+<script>
+// Check Reveal loaded
+L('');
+if (typeof Reveal !== 'undefined') {
+  L('Reveal.js: LOADED', 'ok');
+  L('Reveal version: ' + (Reveal.VERSION || 'unknown'));
+
+  try {
+    var rv = document.getElementById('rv');
+    // For embedded mode test
+    var deck = new Reveal(rv, {
+      embedded: true,
+      controls: true,
+      slideNumber: 'c/t',
+      width: '100%',
+      height: '100%',
+    });
+    deck.initialize().then(function() {
+      L('Reveal.initialize(): SUCCESS', 'ok');
+      L('Total slides: ' + deck.getTotalSlides());
+
+      // Check slides element
+      var slides = rv.querySelector('.slides');
+      var slidesStyle = window.getComputedStyle(slides);
+      L('.slides transform: ' + slidesStyle.transform);
+      L('.slides width: ' + slidesStyle.width);
+      L('.slides height: ' + slidesStyle.height);
+
+      // Check first section
+      var section = rv.querySelector('section');
+      var secStyle = window.getComputedStyle(section);
+      L('section[0] display: ' + secStyle.display);
+      L('section[0] visibility: ' + secStyle.visibility);
+      L('section[0] opacity: ' + secStyle.opacity);
+      L('section[0] width: ' + secStyle.width);
+      L('section[0] height: ' + secStyle.height);
+    }).catch(function(e) {
+      L('Reveal.initialize() FAILED: ' + e.message, 'err');
+    });
+  } catch(e) {
+    L('Reveal error: ' + e.message, 'err');
+    L('Stack: ' + e.stack, 'err');
+  }
+} else {
+  L('Reveal.js: NOT LOADED', 'err');
+}
+
+// Also test full-page mode like the lessons use
+L('');
+L('--- Full-page test ---');
+var htmlClasses = document.documentElement.className;
+L('html classes: "' + htmlClasses + '"');
+</script>
+
+</body>
+</html>
