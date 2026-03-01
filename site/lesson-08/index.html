@@ -292,6 +292,7 @@
 Reveal.initialize({
   hash:true, slideNumber:'c/t', controls:true, progress:false,
   transition:'fade', transitionSpeed:'fast',
+  scrollActivationWidth:0,
 });
 Reveal.on('slidechanged', e=>{
   const pct=(e.indexh/(Reveal.getTotalSlides()-1)*100).toFixed(1);
