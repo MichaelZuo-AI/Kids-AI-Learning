@@ -301,13 +301,17 @@ function setLang(l){
   localStorage.setItem('kai-lang',l);
 }
 setLang(localStorage.getItem('kai-lang')||'cn');
+// Force layout after everything is set up
+setTimeout(function(){ Reveal.layout(); L('--- forced layout ---','w'); },50);
+setTimeout(function(){ Reveal.layout(); L('--- forced layout 300ms ---','w'); },300);
 L('--- after setLang ---');
 L('body classes: "'+document.body.className+'"');
 L('html classes: "'+document.documentElement.className+'"');
 var rvFinal=window.getComputedStyle(rv);
 L('.reveal final: '+rvFinal.width+' x '+rvFinal.height);
 setTimeout(function(){
-  L('--- 500ms later ---','w');
+  Reveal.layout();
+  L('--- 500ms + forced layout ---','w');
   var rvLate=window.getComputedStyle(rv);
   L('.reveal: '+rvLate.width+' x '+rvLate.height);
   var slLate=window.getComputedStyle(document.querySelector('.reveal .slides'));
