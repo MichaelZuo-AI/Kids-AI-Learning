@@ -56,7 +56,6 @@ body.lang-cn .en { display: none !important; }
 }
 
 /* === Reveal Overrides === */
-html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; }
 .reveal { font-family: 'Noto Sans SC', sans-serif; background: var(--bg); }
 .reveal .slides section {
   padding: 60px 24px 40px; text-align: center;
