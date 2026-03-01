@@ -326,6 +326,11 @@
 
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
 <script>
+// iOS/WeChat viewport height fix
+var vh=window.innerHeight;
+document.documentElement.style.height=vh+'px';
+window.addEventListener('resize',function(){document.documentElement.style.height=window.innerHeight+'px';});
+
 Reveal.initialize({
   hash:true, slideNumber:'c/t', controls:true, progress:false,
   transition:'fade', transitionSpeed:'fast',
