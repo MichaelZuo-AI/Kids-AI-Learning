@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>06 · AI 回答我的问题</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="../theme.css">
+</head>
+<body class="lang-cn">
+
+<a class="back-btn" href="../">← <span class="cn">课程目录</span><span class="en">All Lessons</span></a>
+<div id="lang-toggle">
+  <button class="active" onclick="setLang('cn')">中文</button>
+  <button onclick="setLang('en')">EN</button>
+</div>
+<div id="prog"><div id="prog-fill" style="width:0%"></div></div>
+
+<div class="reveal">
+<div class="slides">
+
+<!-- Slide 1: Title -->
+<section data-background="linear-gradient(135deg,#1a0033 0%,#2d1b69 50%,#4a1a8a 100%)">
+  <div class="badge" style="background:rgba(249,202,36,.4)">
+    <span class="cn">Unit 2 · 第3课</span><span class="en">Unit 2 · Lesson 3</span>
+  </div>
+  <div style="font-size:3.5em;margin:12px 0" class="float">💡</div>
+  <h1>
+    <span class="cn">AI 回答我的问题</span>
+    <span class="en">AI Answers My Questions</span>
+  </h1>
+  <p style="color:var(--muted)">
+    <span class="cn">AI 是知识小助手，但也要学会验证答案</span>
+    <span class="en">AI is a knowledge helper, but learn to verify answers</span>
+  </p>
+</section>
+
+<!-- Slide 2: Hook — Fun questions -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <div style="font-size:2.5em;margin-bottom:16px">🤔</div>
+  <h2>
+    <span class="cn">你最想知道什么？</span>
+    <span class="en">What do you most want to know?</span>
+  </h2>
+  <div class="card-grid cols-3" style="margin-top:20px">
+    <div class="card">
+      <div class="card-emoji">🌌</div>
+      <div class="card-title"><span class="cn">为什么天是蓝的？</span><span class="en">Why is the sky blue?</span></div>
+    </div>
+    <div class="card">
+      <div class="card-emoji">🦕</div>
+      <div class="card-title"><span class="cn">恐龙去哪了？</span><span class="en">Where did dinosaurs go?</span></div>
+    </div>
+    <div class="card">
+      <div class="card-emoji">🌍</div>
+      <div class="card-title"><span class="cn">宇宙有多大？</span><span class="en">How big is the universe?</span></div>
+    </div>
+  </div>
+  <p style="margin-top:16px;font-size:.9em;color:var(--muted)">
+    <span class="cn">这些问题，AI 都能帮你回答！</span>
+    <span class="en">AI can help you answer all of these!</span>
+  </p>
+</section>
+
+<!-- Slide 3: Where does AI knowledge come from? -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <h2>
+    <span class="cn">AI 的知识从哪来？</span>
+    <span class="en">Where Does AI Knowledge Come From?</span>
+  </h2>
+  <div class="card-grid cols-3" style="margin-top:16px">
+    <div class="card">
+      <div class="card-emoji">📚</div>
+      <div class="card-title"><span class="cn">书籍</span><span class="en">Books</span></div>
+    </div>
+    <div class="card">
+      <div class="card-emoji">📰</div>
+      <div class="card-title"><span class="cn">文章</span><span class="en">Articles</span></div>
+    </div>
+    <div class="card">
+      <div class="card-emoji">🌐</div>
+      <div class="card-title"><span class="cn">网站</span><span class="en">Websites</span></div>
+    </div>
+  </div>
+  <div class="card-grid cols-1" style="margin-top:14px">
+    <div class="card" style="border-color:rgba(249,202,36,.3);padding:20px">
+      <p style="font-size:1.1em">
+        <span class="cn">= 几乎人类写过的<span class="glow">所有东西</span></span>
+        <span class="en">= Almost <span class="glow">everything</span> humans have written</span>
+      </p>
+      <p style="font-size:.85em;color:var(--muted);margin-top:8px">
+        <span class="cn">但它有一个截止日期 —— 不知道<span class="gold">今天的新闻</span></span>
+        <span class="en">But it has a cutoff date — doesn't know <span class="gold">today's news</span></span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 4: What AI CAN answer -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <h2>
+    <span class="cn">AI <span class="green">擅长</span>回答什么？</span>
+    <span class="en">What <span class="green">Can</span> AI Answer?</span>
+  </h2>
+  <div class="card-grid" style="margin-top:16px">
+    <div class="card good">
+      <div class="card-emoji">🔬</div>
+      <div class="card-title"><span class="cn">科学问题</span><span class="en">Science Questions</span></div>
+      <div class="card-desc"><span class="cn">为什么天是蓝的</span><span class="en">Why is the sky blue</span></div>
+    </div>
+    <div class="card good">
+      <div class="card-emoji">📜</div>
+      <div class="card-title"><span class="cn">历史故事</span><span class="en">History Stories</span></div>
+      <div class="card-desc"><span class="cn">恐龙是怎么灭绝的</span><span class="en">How did dinosaurs go extinct</span></div>
+    </div>
+    <div class="card good">
+      <div class="card-emoji">➗</div>
+      <div class="card-title"><span class="cn">数学题</span><span class="en">Math Problems</span></div>
+      <div class="card-desc"><span class="cn">帮你解释和计算</span><span class="en">Help explain and calculate</span></div>
+    </div>
+    <div class="card good">
+      <div class="card-emoji">🌐</div>
+      <div class="card-title"><span class="cn">翻译语言</span><span class="en">Language Translation</span></div>
+      <div class="card-desc"><span class="cn">中文、英文、韩文…</span><span class="en">Chinese, English, Korean...</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 5: Mewtwo Says -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <div class="mewtwo-bubble">
+    <div class="avatar float">🟣</div>
+    <div class="speech">
+      <span class="cn">
+        "但记住，就连我也不是完美的。AI也会犯错，<span class="glow">重要的事情要和爸爸确认</span>哦！"
+      </span>
+      <span class="en">
+        "But remember, even I'm not perfect. AI makes mistakes too. For important things, <span class="glow">always check with Dad</span>!"
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 6: Three-Step Verification -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <h2>
+    <span class="cn">重要习惯：<span class="glow">三步验证法</span></span>
+    <span class="en">Important Habit: <span class="glow">Three-Step Verification</span></span>
+  </h2>
+  <div class="card-grid cols-3" style="margin-top:20px">
+    <div class="card" style="border-color:rgba(249,202,36,.3)">
+      <div class="card-emoji">1️⃣</div>
+      <div class="card-title"><span class="cn">AI说了什么？</span><span class="en">What did AI say?</span></div>
+      <div class="card-desc">
+        <span class="cn">先理解AI的回答</span>
+        <span class="en">First understand AI's answer</span>
+      </div>
+    </div>
+    <div class="card" style="border-color:rgba(249,202,36,.3)">
+      <div class="card-emoji">2️⃣</div>
+      <div class="card-title"><span class="cn">这听起来合理吗？</span><span class="en">Does it sound reasonable?</span></div>
+      <div class="card-desc">
+        <span class="cn">用你已知的知识判断</span>
+        <span class="en">Use what you already know</span>
+      </div>
+    </div>
+    <div class="card" style="border-color:rgba(249,202,36,.3)">
+      <div class="card-emoji">3️⃣</div>
+      <div class="card-title"><span class="cn">有没有其他地方也这么说？</span><span class="en">Can you find it elsewhere?</span></div>
+      <div class="card-desc">
+        <span class="cn">查书或问爸爸</span>
+        <span class="en">Check a book or ask Dad</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 7: Good vs bad questions -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <h2>
+    <span class="cn">AI 擅长什么？不擅长什么？</span>
+    <span class="en">What is AI Good & Not Good At?</span>
+  </h2>
+  <div class="card-grid" style="margin-top:16px">
+    <div class="card good">
+      <div class="card-emoji">✅</div>
+      <div class="card-title"><span class="cn">AI擅长</span><span class="en">Good At</span></div>
+      <div class="card-desc">
+        <span class="cn">解释原理<br>翻译语言<br>出题考你</span>
+        <span class="en">Explaining concepts<br>Translating languages<br>Making quizzes</span>
+      </div>
+    </div>
+    <div class="card bad">
+      <div class="card-emoji">❌</div>
+      <div class="card-title"><span class="cn">AI不擅长</span><span class="en">Not Good At</span></div>
+      <div class="card-desc">
+        <span class="cn">今天的天气<br>明天会发生什么<br>你的感受</span>
+        <span class="en">Today's weather<br>Predicting the future<br>Your feelings</span>
+      </div>
+    </div>
+  </div>
+  <p style="margin-top:16px;font-size:.85em;color:var(--muted)">
+    <span class="cn">知道AI的强项和弱项，才能更好地使用它！</span>
+    <span class="en">Knowing AI's strengths and weaknesses helps you use it better!</span>
+  </p>
+</section>
+
+<!-- Slide 8: Activity -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <div class="badge" style="background:rgba(253,121,168,.4)">
+    <span class="cn">🎯 互动时间</span><span class="en">🎯 Activity Time</span>
+  </div>
+  <h2>
+    <span class="cn">Damian的问题时间！</span>
+    <span class="en">Damian's Question Time!</span>
+  </h2>
+  <div class="card-grid" style="margin-top:16px">
+    <div class="card">
+      <div class="card-emoji">💭</div>
+      <div class="card-title"><span class="cn">第一步</span><span class="en">Step 1</span></div>
+      <div class="card-desc">
+        <span class="cn">想3个你最好奇的问题</span>
+        <span class="en">Think of 3 questions you're most curious about</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-emoji">✏️</div>
+      <div class="card-title"><span class="cn">第二步</span><span class="en">Step 2</span></div>
+      <div class="card-desc">
+        <span class="cn">写下来（爸爸帮忙）</span>
+        <span class="en">Write them down (Dad helps)</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-emoji">🤖</div>
+      <div class="card-title"><span class="cn">第三步</span><span class="en">Step 3</span></div>
+      <div class="card-desc">
+        <span class="cn">逐一问AI</span>
+        <span class="en">Ask AI one by one</span>
+      </div>
+    </div>
+    <div class="card" style="border-color:rgba(249,202,36,.3)">
+      <div class="card-emoji">🔍</div>
+      <div class="card-title"><span class="cn">第四步</span><span class="en">Step 4</span></div>
+      <div class="card-desc">
+        <span class="cn">用<span class="gold">三步验证法</span>检查答案</span>
+        <span class="en">Use <span class="gold">Three-Step Verification</span> to check</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 9: Unit 2 Completion -->
+<section data-background="linear-gradient(135deg,#1a0033 0%,#2d1b69 50%,#4a1a8a 100%)">
+  <div style="font-size:3em;margin-bottom:12px" class="pop">🎉</div>
+  <h1>
+    <span class="cn">Unit 2 完成！</span>
+    <span class="en">Unit 2 Complete!</span>
+  </h1>
+  <div class="unit-complete" style="margin-top:20px">
+    <div class="check-item">
+      <span class="tick">✅</span>
+      <span>
+        <span class="cn">学会了用 Prompt 让AI画画</span>
+        <span class="en">Learned to use Prompts to make AI draw</span>
+      </span>
+    </div>
+    <div class="check-item">
+      <span class="tick">✅</span>
+      <span>
+        <span class="cn">学会了引导AI讲故事</span>
+        <span class="en">Learned to guide AI in storytelling</span>
+      </span>
+    </div>
+    <div class="check-item">
+      <span class="tick">✅</span>
+      <span>
+        <span class="cn">学会了问AI问题和验证答案</span>
+        <span class="en">Learned to ask AI questions and verify answers</span>
+      </span>
+    </div>
+  </div>
+  <p style="margin-top:16px;color:var(--muted);font-size:.9em">
+    <span class="cn">下一站：Unit 3 — 我怎么和AI说话？</span>
+    <span class="en">Next: Unit 3 — How Do I Talk to AI?</span>
+  </p>
+  <a class="btn btn-gold" href="../" style="margin-top:16px;text-decoration:none">
+    <span class="cn">🏠 回到课程目录</span>
+    <span class="en">🏠 Back to Course Catalog</span>
+  </a>
+</section>
+
+</div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+Reveal.initialize({
+  hash:true, slideNumber:'c/t', controls:true, progress:false,
+  transition:'fade', transitionSpeed:'fast',
+});
+Reveal.on('slidechanged', e=>{
+  const pct=(e.indexh/(Reveal.getTotalSlides()-1)*100).toFixed(1);
+  document.getElementById('prog-fill').style.width=pct+'%';
+});
+function setLang(l){
+  document.body.className='lang-'+l;
+  document.querySelectorAll('#lang-toggle button').forEach((b,i)=>{
+    b.classList.toggle('active',(i===0&&l==='cn')||(i===1&&l==='en'));
+  });
+  localStorage.setItem('kai-lang',l);
+}
+setLang(localStorage.getItem('kai-lang')||'cn');
+</script>
+</body>
+</html>

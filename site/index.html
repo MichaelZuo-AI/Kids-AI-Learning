@@ -3,428 +3,214 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Damian的AI大冒险</title>
+  <title>Damian 的 AI 课堂</title>
+  <link rel="stylesheet" href="theme.css">
+  <style>
+    body { min-height: 100vh; padding: 24px 16px 60px; }
 
-  <!-- Reveal.js from CDN -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
-  <!-- Custom theme -->
-  <link rel="stylesheet" href="css/mewtwo-theme.css">
+    .hero { text-align: center; padding: 40px 0 32px; }
+    .hero .emoji { font-size: 3.5em; margin-bottom: 8px; }
+    .hero h1 { font-size: 2em; font-weight: 900; margin-bottom: 6px; }
+    .hero p { color: var(--muted); font-size: 1em; }
+
+    .unit-label {
+      font-size: .85em; font-weight: 700; color: var(--muted);
+      margin: 32px 0 12px; padding-left: 4px; text-align: left;
+      max-width: 560px; margin-left: auto; margin-right: auto;
+    }
+
+    .lessons {
+      display: flex; flex-direction: column; gap: 10px;
+      max-width: 560px; margin: 0 auto;
+    }
+
+    .lesson-card {
+      display: flex; align-items: center; gap: 14px;
+      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08);
+      border-radius: 14px; padding: 14px 18px;
+      text-decoration: none; color: #fff; transition: all .2s;
+    }
+    .lesson-card:hover { background: rgba(255,255,255,.1); transform: translateX(4px); }
+    .lesson-card .num {
+      width: 36px; height: 36px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: .85em; flex-shrink: 0;
+    }
+    .lesson-card .info { flex: 1; }
+    .lesson-card .info .title { font-weight: 700; font-size: .95em; }
+    .lesson-card .info .sub { font-size: .78em; color: var(--muted); margin-top: 2px; }
+    .lesson-card .arrow { color: var(--muted); font-size: 1.2em; }
+
+    /* Locked */
+    .lesson-card.locked {
+      opacity: .35; pointer-events: none;
+    }
+    .lesson-card.locked .arrow::after { content: '🔒'; }
+    .lesson-card:not(.locked) .arrow::after { content: '→'; }
+
+    /* Unit colors */
+    .u1 .num { background: rgba(224,86,253,.3); color: var(--glow); }
+    .u2 .num { background: rgba(116,185,255,.3); color: var(--blue); }
+    .u3 .num { background: rgba(85,239,196,.3); color: var(--green); }
+    .u4 .num { background: rgba(249,202,36,.3); color: var(--gold); }
+
+    #lang-toggle { position: fixed; top: 10px; right: 14px; z-index: 100; display: flex; gap: 4px; }
+    #lang-toggle button {
+      background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15);
+      color: var(--muted); padding: 4px 10px; border-radius: 6px;
+      cursor: pointer; font-size: .75rem; transition: all .2s;
+    }
+    #lang-toggle button.active { background: var(--glow); color: #fff; border-color: var(--glow); }
+  </style>
 </head>
-<body>
+<body class="lang-cn">
 
-<div class="reveal">
-<div class="slides">
+<div id="lang-toggle">
+  <button class="active" onclick="setLang('cn')">中文</button>
+  <button onclick="setLang('en')">EN</button>
+</div>
 
-<!-- ============================== -->
-<!-- TITLE SLIDE                    -->
-<!-- ============================== -->
-<section class="slide-bg-main">
-  <div style="font-size:4em;margin-bottom:16px">🟣</div>
-  <h1>Damian的AI大冒险</h1>
-  <p style="font-size:1.2em;opacity:0.8;margin-bottom:8px">和超梦一起探索AI的秘密！</p>
-  <p style="font-size:0.9em;opacity:0.5;margin-top:24px">5个神奇岛屿 · 12个互动活动</p>
-  <div class="nav-hint">按 <span class="arrow">→</span> 开始冒险</div>
-</section>
+<div class="hero">
+  <div class="emoji">🟣</div>
+  <h1>
+    <span class="cn">Damian 的 AI 课堂</span>
+    <span class="en">Damian's AI Class</span>
+  </h1>
+  <p>
+    <span class="cn">和超梦一起探索 AI 的秘密！</span>
+    <span class="en">Explore AI secrets with Mewtwo!</span>
+  </p>
+</div>
 
-<!-- ============================== -->
-<!-- ADVENTURE 1: 感知之岛           -->
-<!-- ============================== -->
-<section>
-
-  <!-- Intro -->
-  <section class="slide-bg-adventure-1">
-    <div style="font-size:3.5em;margin-bottom:12px">👂</div>
-    <h2>第1站：感知之岛</h2>
-    <h3 style="opacity:0.7;font-weight:400">AI能听懂你说话</h3>
-    <p style="margin-top:16px">探索AI如何听懂你说的话，还能用声音回答你！</p>
-    <div class="nav-hint">按 <span class="arrow">↓</span> 开始活动</div>
-  </section>
-
-  <!-- Voice Magic -->
-  <section class="slide-bg-adventure-1" data-activity="voice-magic">
-    <h3 style="margin-bottom:8px">🎤 声音魔法</h3>
-    <div class="mewtwo-guide">
-      <div class="mewtwo-avatar">🟣</div>
-      <div class="mewtwo-message">对着屏幕说话，看看AI能不能听懂你！</div>
+<!-- Unit 1 -->
+<div class="unit-label">
+  <span class="cn">Unit 1 — AI 是什么？</span>
+  <span class="en">Unit 1 — What is AI?</span>
+</div>
+<div class="lessons">
+  <a class="lesson-card u1" href="lesson-01/">
+    <div class="num">01</div>
+    <div class="info">
+      <div class="title">🤖 <span class="cn">AI 是会学习的朋友</span><span class="en">AI is a Friend That Learns</span></div>
+      <div class="sub"><span class="cn">认识什么是 AI</span><span class="en">Meet AI for the first time</span></div>
     </div>
-    <div class="activity-content"></div>
-  </section>
-
-  <!-- Speak Listen -->
-  <section class="slide-bg-adventure-1" data-activity="speak-listen">
-    <h3 style="margin-bottom:8px">🔊 听说大冒险</h3>
-    <div class="mewtwo-guide">
-      <div class="mewtwo-avatar">🟣</div>
-      <div class="mewtwo-message">点击卡片，听听AI怎么念！</div>
+    <div class="arrow"></div>
+  </a>
+  <a class="lesson-card u1" href="lesson-02/">
+    <div class="num">02</div>
+    <div class="info">
+      <div class="title">🧠 <span class="cn">AI 怎么学习的</span><span class="en">How Does AI Learn?</span></div>
+      <div class="sub"><span class="cn">数据、模式和训练</span><span class="en">Data, patterns & training</span></div>
     </div>
-    <div class="choice-grid" style="margin-bottom:16px">
-      <button class="phrase-card" data-id="1" data-text="你好，Damian！">
-        <span class="card-emoji">👋</span>
-        <span class="card-text">你好，Damian！</span>
-      </button>
-      <button class="phrase-card" data-id="2" data-text="皮卡丘，我选择你！">
-        <span class="card-emoji">⚡</span>
-        <span class="card-text">皮卡丘，我选择你！</span>
-      </button>
-      <button class="phrase-card" data-id="3" data-text="今天天气真好">
-        <span class="card-emoji">☀️</span>
-        <span class="card-text">今天天气真好</span>
-      </button>
-      <button class="phrase-card" data-id="4" data-text="我最喜欢吃冰淇淋">
-        <span class="card-emoji">🍦</span>
-        <span class="card-text">我最喜欢吃冰淇淋</span>
-      </button>
-      <button class="phrase-card" data-id="5" data-text="超梦是最厉害的宝可梦">
-        <span class="card-emoji">🟣</span>
-        <span class="card-text">超梦是最厉害的宝可梦</span>
-      </button>
-      <button class="phrase-card" data-id="6" data-text="一二三四五，上山打老虎">
-        <span class="card-emoji">🐯</span>
-        <span class="card-text">一二三四五，上山打老虎</span>
-      </button>
+    <div class="arrow"></div>
+  </a>
+  <a class="lesson-card u1" href="lesson-03/">
+    <div class="num">03</div>
+    <div class="info">
+      <div class="title">👁️ <span class="cn">AI 能看能听能说</span><span class="en">AI Can See, Hear & Speak</span></div>
+      <div class="sub"><span class="cn">语音识别、合成和计算机视觉</span><span class="en">STT, TTS & computer vision</span></div>
     </div>
-  </section>
+    <div class="arrow"></div>
+  </a>
+</div>
 
-  <!-- Complete -->
-  <section class="slide-bg-adventure-1">
-    <div style="font-size:3em;margin-bottom:16px">✅</div>
-    <h2>感知之岛 完成！</h2>
-    <p style="margin-top:12px">你学会了：AI能把声音变成文字，也能把文字变成声音！</p>
-    <p style="margin-top:8px;opacity:0.6;font-size:0.9em">这就是<strong>语音识别</strong>和<strong>语音合成</strong>！</p>
-    <div class="nav-hint">按 <span class="arrow">→</span> 前往下一个岛屿</div>
-  </section>
-
-</section>
-
-<!-- ============================== -->
-<!-- ADVENTURE 2: 学习之岛           -->
-<!-- ============================== -->
-<section>
-
-  <!-- Intro -->
-  <section class="slide-bg-adventure-2">
-    <div style="font-size:3.5em;margin-bottom:12px">🧠</div>
-    <h2>第2站：学习之岛</h2>
-    <h3 style="opacity:0.7;font-weight:400">你来教AI</h3>
-    <p style="margin-top:16px">发现AI是怎么从例子中学习的！</p>
-    <div class="nav-hint">按 <span class="arrow">↓</span> 开始活动</div>
-  </section>
-
-  <!-- Thumbs Classifier -->
-  <section class="slide-bg-adventure-2" data-activity="thumbs-classifier">
-    <h3 style="margin-bottom:8px">👍 点赞分类器</h3>
-    <div class="mewtwo-guide">
-      <div class="mewtwo-avatar">🟣</div>
-      <div class="mewtwo-message">教AI分辨不同的东西！</div>
+<!-- Unit 2 -->
+<div class="unit-label">
+  <span class="cn">Unit 2 — AI 能帮我做什么？</span>
+  <span class="en">Unit 2 — What Can AI Do for Me?</span>
+</div>
+<div class="lessons">
+  <a class="lesson-card u2" href="lesson-04/">
+    <div class="num">04</div>
+    <div class="info">
+      <div class="title">🎨 <span class="cn">AI 帮我画画</span><span class="en">AI Draws for Me</span></div>
+      <div class="sub"><span class="cn">文生图和 Prompt</span><span class="en">Text-to-image & prompts</span></div>
     </div>
-    <div class="activity-content"></div>
-  </section>
-
-  <!-- Teach Favorites -->
-  <section class="slide-bg-adventure-2" data-activity="teach-favorites">
-    <h3 style="margin-bottom:8px">⭐ 教超梦你的最爱</h3>
-    <div class="mewtwo-guide">
-      <div class="mewtwo-avatar">🟣</div>
-      <div class="mewtwo-message">告诉超梦你喜欢什么！</div>
+    <div class="arrow"></div>
+  </a>
+  <a class="lesson-card u2" href="lesson-05/">
+    <div class="num">05</div>
+    <div class="info">
+      <div class="title">📖 <span class="cn">AI 帮我讲故事</span><span class="en">AI Tells Stories</span></div>
+      <div class="sub"><span class="cn">生成式写作</span><span class="en">Generative writing</span></div>
     </div>
-    <div class="activity-content"></div>
-  </section>
-
-  <!-- Complete -->
-  <section class="slide-bg-adventure-2">
-    <div style="font-size:3em;margin-bottom:16px">✅</div>
-    <h2>学习之岛 完成！</h2>
-    <p style="margin-top:12px">你学会了：AI需要很多例子才能学会分辨东西！</p>
-    <p style="margin-top:8px;opacity:0.6;font-size:0.9em">这就是<strong>机器学习</strong>的基本原理！</p>
-    <div class="nav-hint">按 <span class="arrow">→</span> 前往下一个岛屿</div>
-  </section>
-
-</section>
-
-<!-- ============================== -->
-<!-- ADVENTURE 3: 创造之岛           -->
-<!-- ============================== -->
-<section>
-
-  <!-- Intro -->
-  <section class="slide-bg-adventure-3">
-    <div style="font-size:3.5em;margin-bottom:12px">✨</div>
-    <h2>第3站：创造之岛</h2>
-    <h3 style="opacity:0.7;font-weight:400">AI帮你讲故事</h3>
-    <p style="margin-top:16px">和AI一起创造属于你的故事！</p>
-    <div class="nav-hint">按 <span class="arrow">↓</span> 开始活动</div>
-  </section>
-
-  <!-- Story Relay -->
-  <section class="slide-bg-adventure-3" data-activity="story-relay">
-    <h3 style="margin-bottom:8px">📖 故事接力</h3>
-    <div class="mewtwo-guide">
-      <div class="mewtwo-avatar">🟣</div>
-      <div class="mewtwo-message">选择角色和场景，和AI一起编故事！</div>
+    <div class="arrow"></div>
+  </a>
+  <a class="lesson-card u2" href="lesson-06/">
+    <div class="num">06</div>
+    <div class="info">
+      <div class="title">💡 <span class="cn">AI 回答我的问题</span><span class="en">AI Answers My Questions</span></div>
+      <div class="sub"><span class="cn">AI 知识助手和验证习惯</span><span class="en">AI as knowledge helper</span></div>
     </div>
-    <div class="activity-content"></div>
-  </section>
+    <div class="arrow"></div>
+  </a>
+</div>
 
-  <!-- Drawing Buddy -->
-  <section class="slide-bg-adventure-3" data-activity="drawing-buddy">
-    <h3 style="margin-bottom:8px">🎨 画画小帮手</h3>
-    <div class="mewtwo-guide">
-      <div class="mewtwo-avatar">🟣</div>
-      <div class="mewtwo-message">告诉AI你想画什么，AI来教你画！</div>
+<!-- Unit 3 -->
+<div class="unit-label">
+  <span class="cn">Unit 3 — 我怎么和 AI 说话？</span>
+  <span class="en">Unit 3 — How Do I Talk to AI?</span>
+</div>
+<div class="lessons">
+  <a class="lesson-card u3" href="lesson-07/">
+    <div class="num">07</div>
+    <div class="info">
+      <div class="title">🗣️ <span class="cn">问题越清楚，答案越好</span><span class="en">Clear Questions = Better Answers</span></div>
+      <div class="sub"><span class="cn">Prompt Engineering 启蒙</span><span class="en">Intro to prompt engineering</span></div>
     </div>
-    <div class="activity-content"></div>
-  </section>
-
-  <!-- Complete -->
-  <section class="slide-bg-adventure-3">
-    <div style="font-size:3em;margin-bottom:16px">✅</div>
-    <h2>创造之岛 完成！</h2>
-    <p style="margin-top:12px">你学会了：AI可以帮你创造故事和画画！</p>
-    <p style="margin-top:8px;opacity:0.6;font-size:0.9em">但真正有创意的是<strong>你</strong>！AI只是帮手！</p>
-    <div class="nav-hint">按 <span class="arrow">→</span> 前往下一个岛屿</div>
-  </section>
-
-</section>
-
-<!-- ============================== -->
-<!-- ADVENTURE 4: 探秘之岛           -->
-<!-- ============================== -->
-<section>
-
-  <!-- Intro -->
-  <section class="slide-bg-adventure-4">
-    <div style="font-size:3.5em;margin-bottom:12px">🤔</div>
-    <h2>第4站：探秘之岛</h2>
-    <h3 style="opacity:0.7;font-weight:400">AI不知道的事</h3>
-    <p style="margin-top:16px">发现AI也有不懂的事情和会犯的错误！</p>
-    <div class="nav-hint">按 <span class="arrow">↓</span> 开始活动</div>
-  </section>
-
-  <!-- Trick the AI -->
-  <section class="slide-bg-adventure-4" data-activity="trick-the-ai">
-    <h3 style="margin-bottom:8px">🃏 考考AI</h3>
-    <div class="mewtwo-guide">
-      <div class="mewtwo-avatar">🟣</div>
-      <div class="mewtwo-message">点击卡片问AI奇怪的问题！</div>
+    <div class="arrow"></div>
+  </a>
+  <a class="lesson-card u3" href="lesson-08/">
+    <div class="num">08</div>
+    <div class="info">
+      <div class="title">🎭 <span class="cn">和 AI 一起创作</span><span class="en">Create Together with AI</span></div>
+      <div class="sub"><span class="cn">人机协作</span><span class="en">Human-AI collaboration</span></div>
     </div>
-    <div class="choice-grid">
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <span style="font-size:1.5em">🤔</span>
-            <span>天空是什么味道？</span>
-          </div>
-          <div class="flip-card-back">嗯...我没有舌头，尝不到味道！AI不能闻也不能尝哦！😄</div>
-        </div>
-      </div>
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <span style="font-size:1.5em">😴</span>
-            <span>你晚上做梦吗？</span>
-          </div>
-          <div class="flip-card-back">我不睡觉，所以不做梦！AI没有梦，但你的梦一定很有趣！</div>
-        </div>
-      </div>
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <span style="font-size:1.5em">🔢</span>
-            <span>1+1等于几？</span>
-          </div>
-          <div class="flip-card-back">等于2！但如果是一团泥加一团泥，还是一团泥哦！😆</div>
-        </div>
-      </div>
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <span style="font-size:1.5em">😨</span>
-            <span>你会害怕吗？</span>
-          </div>
-          <div class="flip-card-back">我不会害怕。AI没有感情，但你害怕的时候可以找爸爸妈妈！❤️</div>
-        </div>
-      </div>
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <span style="font-size:1.5em">🏆</span>
-            <span>最好的宝可梦是谁？</span>
-          </div>
-          <div class="flip-card-back">每个宝可梦都很棒！（偷偷说，超梦最厉害啦😄）</div>
-        </div>
-      </div>
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <span style="font-size:1.5em">🎨</span>
-            <span>你能画一只猫吗？</span>
-          </div>
-          <div class="flip-card-back">我不会画画！我只能用文字描述。但你可以画，你比AI厉害！✏️</div>
-        </div>
-      </div>
+    <div class="arrow"></div>
+  </a>
+</div>
+
+<!-- Unit 4 -->
+<div class="unit-label">
+  <span class="cn">Unit 4 — AI 和我们的世界</span>
+  <span class="en">Unit 4 — AI & Our World</span>
+</div>
+<div class="lessons">
+  <a class="lesson-card u4" href="lesson-09/">
+    <div class="num">09</div>
+    <div class="info">
+      <div class="title">❌ <span class="cn">AI 也会犯错</span><span class="en">AI Makes Mistakes Too</span></div>
+      <div class="sub"><span class="cn">批判性思维</span><span class="en">Critical thinking</span></div>
     </div>
-  </section>
-
-  <!-- AI Feelings -->
-  <section class="slide-bg-adventure-4" data-activity="ai-feelings">
-    <h3 style="margin-bottom:8px">💭 AI有感情吗</h3>
-    <div class="mewtwo-guide">
-      <div class="mewtwo-avatar">🟣</div>
-      <div class="mewtwo-message">和超梦一起讨论：AI能感受快乐和难过吗？</div>
+    <div class="arrow"></div>
+  </a>
+  <a class="lesson-card u4" href="lesson-10/">
+    <div class="num">10</div>
+    <div class="info">
+      <div class="title">⚖️ <span class="cn">AI 能做什么，不能做什么</span><span class="en">What AI Can & Can't Do</span></div>
+      <div class="sub"><span class="cn">AI 的边界</span><span class="en">AI boundaries</span></div>
     </div>
-    <div class="activity-content"></div>
-  </section>
-
-  <!-- Spot Mistake -->
-  <section class="slide-bg-adventure-4" data-activity="spot-mistake">
-    <h3 style="margin-bottom:8px">🔍 找找AI的错误</h3>
-    <div class="mewtwo-guide">
-      <div class="mewtwo-avatar">🟣</div>
-      <div class="mewtwo-message">AI说的宝可梦知识对不对？来当小侦探！</div>
+    <div class="arrow"></div>
+  </a>
+  <a class="lesson-card u4" href="lesson-11/">
+    <div class="num">11</div>
+    <div class="info">
+      <div class="title">🚀 <span class="cn">我长大可以做什么？</span><span class="en">What Can I Be When I Grow Up?</span></div>
+      <div class="sub"><span class="cn">AI 时代的未来</span><span class="en">Future in the AI era</span></div>
     </div>
-    <div class="activity-content"></div>
-  </section>
-
-  <!-- Complete -->
-  <section class="slide-bg-adventure-4">
-    <div style="font-size:3em;margin-bottom:16px">✅</div>
-    <h2>探秘之岛 完成！</h2>
-    <p style="margin-top:12px">你学会了：AI也会犯错，也有不知道的事！</p>
-    <p style="margin-top:8px;opacity:0.6;font-size:0.9em">所以要<strong>自己思考</strong>，不能完全相信AI！</p>
-    <div class="nav-hint">按 <span class="arrow">→</span> 前往最后的岛屿</div>
-  </section>
-
-</section>
-
-<!-- ============================== -->
-<!-- ADVENTURE 5: 毕业之岛           -->
-<!-- ============================== -->
-<section>
-
-  <!-- Intro -->
-  <section class="slide-bg-adventure-5">
-    <div style="font-size:3.5em;margin-bottom:12px">🏆</div>
-    <h2>第5站：毕业之岛</h2>
-    <h3 style="opacity:0.7;font-weight:400">Damian的超能力</h3>
-    <p style="margin-top:16px">展示你学到的一切，获得AI小专家证书！</p>
-    <div class="nav-hint">按 <span class="arrow">↓</span> 开始活动</div>
-  </section>
-
-  <!-- Free Creation -->
-  <section class="slide-bg-adventure-5" data-activity="free-creation">
-    <h3 style="margin-bottom:8px">🎯 自由创造</h3>
-    <div class="mewtwo-guide">
-      <div class="mewtwo-avatar">🟣</div>
-      <div class="mewtwo-message">选一个你最喜欢的活动，再玩一次吧！</div>
-    </div>
-    <div class="activity-links">
-      <a class="activity-link" data-slide="1,1" href="#">
-        <span class="link-emoji">🎤</span>声音魔法
-      </a>
-      <a class="activity-link" data-slide="1,2" href="#">
-        <span class="link-emoji">🔊</span>听说大冒险
-      </a>
-      <a class="activity-link" data-slide="2,1" href="#">
-        <span class="link-emoji">👍</span>点赞分类器
-      </a>
-      <a class="activity-link" data-slide="2,2" href="#">
-        <span class="link-emoji">⭐</span>教超梦你的最爱
-      </a>
-      <a class="activity-link" data-slide="3,1" href="#">
-        <span class="link-emoji">📖</span>故事接力
-      </a>
-      <a class="activity-link" data-slide="3,2" href="#">
-        <span class="link-emoji">🎨</span>画画小帮手
-      </a>
-      <a class="activity-link" data-slide="4,1" href="#">
-        <span class="link-emoji">🃏</span>考考AI
-      </a>
-      <a class="activity-link" data-slide="4,2" href="#">
-        <span class="link-emoji">💭</span>AI有感情吗
-      </a>
-      <a class="activity-link" data-slide="4,3" href="#">
-        <span class="link-emoji">🔍</span>找找AI的错误
-      </a>
-      <a class="activity-link" data-slide="5,2" href="#">
-        <span class="link-emoji">🐾</span>创造宝可梦
-      </a>
-    </div>
-  </section>
-
-  <!-- Create Pokemon -->
-  <section class="slide-bg-adventure-5" data-activity="create-pokemon">
-    <h3 style="margin-bottom:8px">🐾 创造宝可梦</h3>
-    <div class="mewtwo-guide">
-      <div class="mewtwo-avatar">🟣</div>
-      <div class="mewtwo-message">和AI一起设计一个全新的宝可梦！</div>
-    </div>
-    <div class="activity-content"></div>
-  </section>
-
-  <!-- Graduation -->
-  <section class="slide-bg-adventure-5" data-activity="graduation">
-    <h3 style="margin-bottom:12px">🎓 毕业典礼</h3>
-    <div class="mewtwo-guide">
-      <div class="mewtwo-avatar">🟣</div>
-      <div class="mewtwo-message">恭喜你！领取AI小专家证书！</div>
-    </div>
-    <div class="certificate">
-      <div class="cert-emoji">🏆</div>
-      <h2>AI小专家证书</h2>
-      <h3>Certificate of AI Explorer</h3>
-      <p>兹证明</p>
-      <div class="cert-name">Damian</div>
-      <p>完成了五个神奇岛屿的探险</p>
-      <p>掌握了AI的基本知识</p>
-      <p style="margin-top:12px;font-weight:600">
-        ✅ 语音识别与合成<br>
-        ✅ 机器学习<br>
-        ✅ AI创意助手<br>
-        ✅ AI的局限性<br>
-        ✅ 创造与思考
-      </p>
-      <div class="cert-date"></div>
-      <p style="margin-top:8px;font-weight:700">颁发者：超梦 🟣</p>
-    </div>
-  </section>
-
-</section>
-
-<!-- ============================== -->
-<!-- END SLIDE                      -->
-<!-- ============================== -->
-<section class="slide-bg-end">
-  <div style="font-size:4em;margin-bottom:16px">🟣</div>
-  <h1>冒险结束！</h1>
-  <p style="font-size:1.2em;margin-top:12px">Damian，你是最棒的AI小专家！</p>
-  <p style="margin-top:24px;opacity:0.7">超梦会一直在这里等你回来继续探索！</p>
-  <p style="margin-top:32px;font-size:0.8em;opacity:0.4">按 ← 可以回去重玩任何活动</p>
-</section>
-
-</div><!-- .slides -->
-</div><!-- .reveal -->
-
-<!-- Reveal.js from CDN -->
-<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
-<!-- Activity controllers -->
-<script src="js/activities.js"></script>
+    <div class="arrow"></div>
+  </a>
+</div>
 
 <script>
-  Reveal.initialize({
-    hash: true,
-    history: false,
-    controls: true,
-    progress: true,
-    center: true,
-    transition: 'slide',
-    backgroundTransition: 'fade',
-    // Nested slides: right = next island, down = activities
-    // Touch swipe works naturally
-    touch: true,
-    // Keyboard
-    keyboard: true,
+function setLang(l){
+  document.body.className='lang-'+l;
+  document.querySelectorAll('#lang-toggle button').forEach((b,i)=>{
+    b.classList.toggle('active',(i===0&&l==='cn')||(i===1&&l==='en'));
   });
+  localStorage.setItem('kai-lang',l);
+}
+setLang(localStorage.getItem('kai-lang')||'cn');
 </script>
-
 </body>
 </html>

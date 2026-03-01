@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>07 · 问题越清楚，答案越好</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="../theme.css">
+</head>
+<body class="lang-cn">
+
+<a class="back-btn" href="../">← <span class="cn">课程目录</span><span class="en">All Lessons</span></a>
+<div id="lang-toggle">
+  <button class="active" onclick="setLang('cn')">中文</button>
+  <button onclick="setLang('en')">EN</button>
+</div>
+<div id="prog"><div id="prog-fill" style="width:0%"></div></div>
+
+<div class="reveal">
+<div class="slides">
+
+<!-- Slide 1: Title -->
+<section data-background="linear-gradient(135deg,#1a0033 0%,#2d1b69 50%,#4a1a8a 100%)">
+  <div class="badge" style="background:rgba(224,86,253,.4)">
+    <span class="cn">Unit 3 · 第1课</span><span class="en">Unit 3 · Lesson 1</span>
+  </div>
+  <div style="font-size:3.5em;margin:12px 0" class="float">🗣️</div>
+  <h1>
+    <span class="cn">问题越清楚，答案越好</span>
+    <span class="en">Clear Questions = Better Answers</span>
+  </h1>
+  <p style="color:var(--muted)">
+    <span class="cn">学会给AI下好指令（Prompt）</span>
+    <span class="en">Learn to give AI great instructions (Prompts)</span>
+  </p>
+</section>
+
+<!-- Slide 2: Hook — Vague commands game -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <div style="font-size:2.5em;margin-bottom:16px">😵‍💫</div>
+  <h2>
+    <span class="cn">我说一个模糊的指令，<br>看你能不能理解？</span>
+    <span class="en">I'll give a vague command —<br>can you understand it?</span>
+  </h2>
+  <div class="card-grid cols-3" style="margin-top:20px">
+    <div class="card">
+      <div class="card-emoji">👉</div>
+      <div class="card-title"><span class="cn">"帮我拿那个"</span><span class="en">"Get me that thing"</span></div>
+      <div class="card-desc"><span class="cn">哪个？？？</span><span class="en">Which one???</span></div>
+    </div>
+    <div class="card">
+      <div class="card-emoji">🎨</div>
+      <div class="card-title"><span class="cn">"画一个好看的"</span><span class="en">"Draw something nice"</span></div>
+      <div class="card-desc"><span class="cn">什么好看的？？？</span><span class="en">Nice how???</span></div>
+    </div>
+    <div class="card">
+      <div class="card-emoji">🚶</div>
+      <div class="card-title"><span class="cn">"去那边"</span><span class="en">"Go over there"</span></div>
+      <div class="card-desc"><span class="cn">哪边？？？</span><span class="en">Where???</span></div>
+    </div>
+  </div>
+  <p style="margin-top:16px;font-size:.95em;color:var(--muted)">
+    <span class="cn">你知道我在说什么吗？是不是很困惑？</span>
+    <span class="en">Do you know what I mean? Confusing, right?</span>
+  </p>
+</section>
+
+<!-- Slide 3: Analogy — Mewtwo needs clear commands -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <h2>
+    <span class="cn">超梦也需要<span class="glow">清楚的指令</span>！</span>
+    <span class="en">Mewtwo Needs <span class="glow">Clear Commands</span> Too!</span>
+  </h2>
+  <div class="card-grid" style="margin-top:16px">
+    <div class="card bad">
+      <div class="card-emoji">❌</div>
+      <div class="card-title"><span class="cn">"帮我打"</span><span class="en">"Help me fight"</span></div>
+      <div class="card-desc">
+        <span class="cn">超梦：??? 打谁？</span>
+        <span class="en">Mewtwo: ??? Fight who?</span>
+      </div>
+    </div>
+    <div class="card good">
+      <div class="card-emoji">✅</div>
+      <div class="card-title"><span class="cn">"用超级念力打那只喷火龙！"</span><span class="en">"Use Psychic on that Charizard!"</span></div>
+      <div class="card-desc">
+        <span class="cn">超梦：没问题！🟣⚡</span>
+        <span class="en">Mewtwo: Got it! 🟣⚡</span>
+      </div>
+    </div>
+  </div>
+  <p style="margin-top:16px;font-size:.95em;color:var(--muted)">
+    <span class="cn">AI 也是一样 —— <span class="glow">清楚的指令 = 很棒的结果</span></span>
+    <span class="en">AI is the same — <span class="glow">clear instructions = great results</span></span>
+  </p>
+</section>
+
+<!-- Slide 4: Four elements of a good Prompt -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <h2>
+    <span class="cn">好 Prompt 的<span class="glow">四个要素</span></span>
+    <span class="en">Four Elements of a <span class="glow">Good Prompt</span></span>
+  </h2>
+  <div class="card-grid" style="margin-top:16px">
+    <div class="card" style="border-color:rgba(224,86,253,.3)">
+      <div class="card-emoji">👤</div>
+      <div class="card-title"><span class="cn">Who 谁</span><span class="en">Who</span></div>
+      <div class="card-desc">
+        <span class="cn">主角是谁</span>
+        <span class="en">Who is the main character</span>
+      </div>
+    </div>
+    <div class="card" style="border-color:rgba(116,185,255,.3)">
+      <div class="card-emoji">📋</div>
+      <div class="card-title"><span class="cn">What 做什么</span><span class="en">What</span></div>
+      <div class="card-desc">
+        <span class="cn">具体任务</span>
+        <span class="en">The specific task</span>
+      </div>
+    </div>
+    <div class="card" style="border-color:rgba(249,202,36,.3)">
+      <div class="card-emoji">🎨</div>
+      <div class="card-title"><span class="cn">How 怎么样</span><span class="en">How</span></div>
+      <div class="card-desc">
+        <span class="cn">风格/方式</span>
+        <span class="en">Style / approach</span>
+      </div>
+    </div>
+    <div class="card" style="border-color:rgba(85,239,196,.3)">
+      <div class="card-emoji">🎯</div>
+      <div class="card-title"><span class="cn">Why 为什么</span><span class="en">Why</span></div>
+      <div class="card-desc">
+        <span class="cn">目的/场合</span>
+        <span class="en">Purpose / occasion</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 5: Mewtwo Says -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <div class="mewtwo-bubble">
+    <div class="avatar float">🟣</div>
+    <div class="speech">
+      <span class="cn">
+        "一个好的指令，能让我发挥<span class="glow">最强的能力</span>。模糊的指令，让我不知所措。记住：<span class="gold">说得越清楚，AI做得越好</span>！"
+      </span>
+      <span class="en">
+        "A good prompt lets me use my <span class="glow">full power</span>. Vague prompts leave me confused. Remember: <span class="gold">the clearer you speak, the better AI performs</span>!"
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 6: Prompt evolution — 3 levels -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <h2>
+    <span class="cn">Prompt <span class="glow">进化</span>之路</span>
+    <span class="en">Prompt <span class="glow">Evolution</span></span>
+  </h2>
+  <div class="card-grid cols-1" style="margin-top:16px">
+    <div class="card bad" style="padding:16px">
+      <div style="display:flex;align-items:center;gap:10px">
+        <span style="font-size:1.3em">❌</span>
+        <span style="font-size:.85em;font-weight:700;color:var(--pink)">v1</span>
+        <span style="font-size:.95em">
+          <span class="cn">"帮我写个故事"</span>
+          <span class="en">"Write me a story"</span>
+        </span>
+        <span style="font-size:.75em;color:var(--muted);margin-left:auto">
+          <span class="cn">太模糊</span><span class="en">Too vague</span>
+        </span>
+      </div>
+    </div>
+    <div style="font-size:1.5em;color:var(--muted);margin:4px 0">⬇️</div>
+    <div class="card" style="border-color:rgba(249,202,36,.3);background:rgba(249,202,36,.08);padding:16px">
+      <div style="display:flex;align-items:center;gap:10px">
+        <span style="font-size:1.3em">🔶</span>
+        <span style="font-size:.85em;font-weight:700;color:var(--gold)">v2</span>
+        <span style="font-size:.95em">
+          <span class="cn">"帮我写个关于Pokemon的故事"</span>
+          <span class="en">"Write me a story about Pokemon"</span>
+        </span>
+        <span style="font-size:.75em;color:var(--muted);margin-left:auto">
+          <span class="cn">好一点</span><span class="en">Better</span>
+        </span>
+      </div>
+    </div>
+    <div style="font-size:1.5em;color:var(--muted);margin:4px 0">⬇️</div>
+    <div class="card good" style="padding:16px">
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+        <span style="font-size:1.3em">✅</span>
+        <span style="font-size:.85em;font-weight:700;color:var(--green)">v3</span>
+        <span style="font-size:.9em">
+          <span class="cn">"帮我写一个Damian和Mewtwo在海底寻找传说神兽的5句话短故事，要有惊喜结局"</span>
+          <span class="en">"Write a 5-sentence story about Damian and Mewtwo searching for a legendary Pokemon underwater, with a surprise ending"</span>
+        </span>
+      </div>
+      <div style="font-size:.75em;color:var(--green);margin-top:6px;font-weight:700">
+        <span class="cn">完美！🎯</span><span class="en">Perfect! 🎯</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 7: Three magic words -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <h2>
+    <span class="cn">三个<span class="glow">魔法词</span>让 Prompt 升级</span>
+    <span class="en">Three <span class="glow">Magic Words</span> to Upgrade Any Prompt</span>
+  </h2>
+  <div class="card-grid cols-3" style="margin-top:20px">
+    <div class="card" style="border-color:rgba(224,86,253,.3)">
+      <div class="card-emoji">📝</div>
+      <div class="card-title"><span class="cn">"详细地"</span><span class="en">"In detail"</span></div>
+      <div class="card-desc">
+        <span class="cn">让AI回答得更完整</span>
+        <span class="en">Makes AI answer more completely</span>
+      </div>
+    </div>
+    <div class="card" style="border-color:rgba(116,185,255,.3)">
+      <div class="card-emoji">👶</div>
+      <div class="card-title"><span class="cn">"用5岁孩子能懂的语言"</span><span class="en">"In kid-friendly language"</span></div>
+      <div class="card-desc">
+        <span class="cn">让AI说得简单易懂</span>
+        <span class="en">Makes AI explain simply</span>
+      </div>
+    </div>
+    <div class="card" style="border-color:rgba(85,239,196,.3)">
+      <div class="card-emoji">💡</div>
+      <div class="card-title"><span class="cn">"举个例子"</span><span class="en">"Give me an example"</span></div>
+      <div class="card-desc">
+        <span class="cn">让AI用例子帮你理解</span>
+        <span class="en">Makes AI use examples to help</span>
+      </div>
+    </div>
+  </div>
+  <p style="margin-top:16px;font-size:.85em;color:var(--muted)">
+    <span class="cn">加上这些词，答案马上变好！</span>
+    <span class="en">Add these words and answers instantly improve!</span>
+  </p>
+</section>
+
+<!-- Slide 8: Activity — Prompt Upgrade Challenge -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <div class="badge" style="background:rgba(253,121,168,.4)">
+    <span class="cn">🎯 互动时间</span><span class="en">🎯 Activity Time</span>
+  </div>
+  <h2>
+    <span class="cn">Prompt 升级挑战！</span>
+    <span class="en">Prompt Upgrade Challenge!</span>
+  </h2>
+  <div class="card-grid cols-1" style="margin-top:16px">
+    <div class="card bad" style="padding:18px">
+      <p style="font-size:.95em">
+        <span class="cn">起始 Prompt：<strong>"帮我画个动物"</strong></span>
+        <span class="en">Starting Prompt: <strong>"Draw me an animal"</strong></span>
+      </p>
+    </div>
+  </div>
+  <div style="font-size:1.5em;color:var(--muted);margin:8px 0">⬇️</div>
+  <div class="card-grid" style="margin-top:0">
+    <div class="card" style="border-color:rgba(224,86,253,.3)">
+      <div class="card-emoji">🧠</div>
+      <div class="card-title"><span class="cn">Damian 加细节</span><span class="en">Damian Adds Details</span></div>
+      <div class="card-desc">
+        <span class="cn">用四要素升级！<br>谁？什么？怎样？为什么？</span>
+        <span class="en">Use the 4 elements!<br>Who? What? How? Why?</span>
+      </div>
+    </div>
+    <div class="card" style="border-color:rgba(85,239,196,.3)">
+      <div class="card-emoji">✨</div>
+      <div class="card-title"><span class="cn">和爸爸一起完成</span><span class="en">Complete with Dad</span></div>
+      <div class="card-desc">
+        <span class="cn">写好新 Prompt<br>→ 用AI测试效果！</span>
+        <span class="en">Write the new Prompt<br>→ Test it with AI!</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 9: Summary -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <h2>
+    <span class="cn">今天学到了 ✨</span>
+    <span class="en">What We Learned ✨</span>
+  </h2>
+  <ul class="summary-list">
+    <li>
+      <span class="num">1</span>
+      <span><span class="cn"><span class="glow">清楚的问题</span> = 好的答案</span><span class="en"><span class="glow">Clear questions</span> = better answers</span></span>
+    </li>
+    <li>
+      <span class="num">2</span>
+      <span><span class="cn">Prompt 四要素：<span class="glow">谁、做什么、怎么样、为什么</span></span><span class="en">4 Prompt elements: <span class="glow">Who, What, How, Why</span></span></span>
+    </li>
+    <li>
+      <span class="num">3</span>
+      <span><span class="cn">三个魔法词：详细地、简单语言、举例子</span><span class="en">3 magic words: in detail, kid-friendly, give examples</span></span>
+    </li>
+    <li>
+      <span class="num">4</span>
+      <span><span class="cn"><span class="glow">多练习</span>就会越来越好！</span><span class="en"><span class="glow">More practice</span> makes you better!</span></span>
+    </li>
+  </ul>
+  <p style="margin-top:20px;color:var(--muted);font-size:.9em">
+    <span class="cn">下节课：🎭 和AI一起创作</span>
+    <span class="en">Next: 🎭 Create Together with AI</span>
+  </p>
+</section>
+
+</div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+Reveal.initialize({
+  hash:true, slideNumber:'c/t', controls:true, progress:false,
+  transition:'fade', transitionSpeed:'fast',
+});
+Reveal.on('slidechanged', e=>{
+  const pct=(e.indexh/(Reveal.getTotalSlides()-1)*100).toFixed(1);
+  document.getElementById('prog-fill').style.width=pct+'%';
+});
+function setLang(l){
+  document.body.className='lang-'+l;
+  document.querySelectorAll('#lang-toggle button').forEach((b,i)=>{
+    b.classList.toggle('active',(i===0&&l==='cn')||(i===1&&l==='en'));
+  });
+  localStorage.setItem('kai-lang',l);
+}
+setLang(localStorage.getItem('kai-lang')||'cn');
+</script>
+</body>
+</html>

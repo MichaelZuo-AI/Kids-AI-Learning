@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02 · AI 怎么学习的</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="../theme.css">
+</head>
+<body class="lang-cn">
+
+<a class="back-btn" href="../">← <span class="cn">课程目录</span><span class="en">All Lessons</span></a>
+<div id="lang-toggle">
+  <button class="active" onclick="setLang('cn')">中文</button>
+  <button onclick="setLang('en')">EN</button>
+</div>
+<div id="prog"><div id="prog-fill" style="width:0%"></div></div>
+
+<div class="reveal">
+<div class="slides">
+
+<!-- Slide 1: Title -->
+<section data-background="linear-gradient(135deg,#1a0033 0%,#2d1b69 50%,#4a1a8a 100%)">
+  <div class="badge" style="background:rgba(224,86,253,.4)">
+    <span class="cn">Unit 1 · 第2课</span><span class="en">Unit 1 · Lesson 2</span>
+  </div>
+  <div style="font-size:3.5em;margin:12px 0" class="float">🧠</div>
+  <h1>
+    <span class="cn">AI 怎么学习的</span>
+    <span class="en">How Does AI Learn?</span>
+  </h1>
+  <p style="color:var(--muted)">
+    <span class="cn">了解 AI 学习的秘密：训练数据</span>
+    <span class="en">Discover the secret of AI learning: Training Data</span>
+  </p>
+</section>
+
+<!-- Slide 2: Hook -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <div style="font-size:2.5em;margin-bottom:16px">🤔</div>
+  <h2>
+    <span class="cn">你是怎么学会认字的？</span>
+    <span class="en">How did you learn to read?</span>
+  </h2>
+  <p style="color:var(--muted);margin-top:16px">
+    <span class="cn">你看了很多很多的字，慢慢就认识了！<br>你看到"猫"这个字很多次，就知道它长什么样了。</span>
+    <span class="en">You saw lots and lots of words, and gradually learned them!<br>You saw the word "cat" many times, and learned what it looks like.</span>
+  </p>
+</section>
+
+<!-- Slide 3: Core concept — Training Data -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <h2>
+    <span class="cn">AI 学习的方式<span class="glow">和你一样</span>！</span>
+    <span class="en">AI learns <span class="glow">the same way</span> you do!</span>
+  </h2>
+  <div class="card-grid cols-1" style="margin-top:20px">
+    <div class="card" style="border-color:rgba(224,86,253,.4);padding:24px">
+      <p style="font-size:1.2em">
+        <span class="cn">给 AI 看 <span class="glow">1000 张猫的照片</span><br>它就学会了猫长什么样！</span>
+        <span class="en">Show AI <span class="glow">1000 photos of cats</span><br>and it learns what a cat looks like!</span>
+      </p>
+      <p style="font-size:.95em;color:var(--muted);margin-top:12px">
+        <span class="cn">这些例子有个名字：<strong class="glow">训练数据 (Training Data)</strong><br>= 我们给 AI 看的例子</span>
+        <span class="en">These examples have a name: <strong class="glow">Training Data</strong><br>= the examples we give AI to learn from</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 4: Analogy — Puppy vs AI -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <h2>
+    <span class="cn">教小狗 vs 教 AI</span>
+    <span class="en">Teaching a Puppy vs Teaching AI</span>
+  </h2>
+  <div class="card-grid" style="margin-top:16px">
+    <div class="card">
+      <div class="card-emoji">🐕</div>
+      <div class="card-title"><span class="cn">教小狗</span><span class="en">Teaching a Puppy</span></div>
+      <div class="card-desc">
+        <span class="cn">给零食 → 说"坐下" → 反复练习 → 学会了！</span>
+        <span class="en">Show treat → Say "sit" → Repeat → Learned!</span>
+      </div>
+    </div>
+    <div class="card" style="border-color:rgba(224,86,253,.3)">
+      <div class="card-emoji">🤖</div>
+      <div class="card-title"><span class="cn">教 AI</span><span class="en">Teaching AI</span></div>
+      <div class="card-desc">
+        <span class="cn">给数据 → 找规律 → 反复练习 → 学会了！</span>
+        <span class="en">Show data → Find pattern → Repeat → Learned!</span>
+      </div>
+    </div>
+  </div>
+  <p style="margin-top:16px;font-size:.9em;color:var(--muted)">
+    <span class="cn">它们都需要<span class="glow">大量的重复练习</span>才能学会！</span>
+    <span class="en">Both need <span class="glow">lots of repetition</span> to learn!</span>
+  </p>
+</section>
+
+<!-- Slide 5: Mewtwo Says -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <div class="mewtwo-bubble">
+    <div class="avatar float">🟣</div>
+    <div class="speech">
+      <span class="cn">
+        "我学会超能力也不是一天就会的！训练师给我越多练习，我就越强。AI也是一样——<span class="glow">数据越多，学得越好</span>。"
+      </span>
+      <span class="en">
+        "I didn't learn Psychic in one day! The more my trainer practiced with me, the stronger I got. AI is the same — <span class="glow">more data means better learning</span>."
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 6: Three Steps of AI Learning -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <h2>
+    <span class="cn">AI 学习三步走</span>
+    <span class="en">Three Steps of AI Learning</span>
+  </h2>
+  <div class="card-grid cols-3" style="margin-top:16px">
+    <div class="card">
+      <div class="card-emoji">📦</div>
+      <div class="card-title"><span class="cn">① 收集数据</span><span class="en">① Collect Data</span></div>
+      <div class="card-desc">
+        <span class="cn">给AI看很多照片/文字</span>
+        <span class="en">Show AI lots of photos/text</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-emoji">🔍</div>
+      <div class="card-title"><span class="cn">② 找规律</span><span class="en">② Find Patterns</span></div>
+      <div class="card-desc">
+        <span class="cn">AI发现猫都有尖耳朵</span>
+        <span class="en">AI notices cats have pointy ears</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-emoji">✅</div>
+      <div class="card-title"><span class="cn">③ 学会了！</span><span class="en">③ Learned!</span></div>
+      <div class="card-desc">
+        <span class="cn">看到新照片也能认出猫</span>
+        <span class="en">Can recognize cats in new photos</span>
+      </div>
+    </div>
+  </div>
+  <p style="margin-top:16px;font-size:.9em;color:var(--muted)">
+    <span class="cn">收集 → 找规律 → 学会！就这么简单</span>
+    <span class="en">Collect → Find patterns → Learned! That simple</span>
+  </p>
+</section>
+
+<!-- Slide 7: Interactive — AI learns animals (flip cards) -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <h2>
+    <span class="cn">AI 学认动物</span>
+    <span class="en">AI Learns Animals</span>
+  </h2>
+  <p style="font-size:.9em;color:var(--muted);margin-bottom:12px">
+    <span class="cn">点击卡片，看看 AI 是怎么认出它们的！</span>
+    <span class="en">Tap a card to see how AI recognizes them!</span>
+  </p>
+  <div class="card-grid" style="margin-top:8px">
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <div style="font-size:2em">🐱</div>
+          <div style="font-weight:700"><span class="cn">猫咪</span><span class="en">Cat</span></div>
+        </div>
+        <div class="flip-back">
+          <span class="cn">AI看到：<br>4条腿 + 尖耳朵<br>+ 胡须 + 毛茸茸<br>→ <strong>猫！</strong></span>
+          <span class="en">AI sees:<br>4 legs + pointy ears<br>+ whiskers + furry<br>→ <strong>Cat!</strong></span>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <div style="font-size:2em">🐕</div>
+          <div style="font-weight:700"><span class="cn">小狗</span><span class="en">Dog</span></div>
+        </div>
+        <div class="flip-back">
+          <span class="cn">AI看到：<br>4条腿 + 垂耳朵<br>+ 尾巴摇 + 毛茸茸<br>→ <strong>狗！</strong></span>
+          <span class="en">AI sees:<br>4 legs + floppy ears<br>+ wagging tail + furry<br>→ <strong>Dog!</strong></span>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <div style="font-size:2em">🐟</div>
+          <div style="font-weight:700"><span class="cn">小鱼</span><span class="en">Fish</span></div>
+        </div>
+        <div class="flip-back">
+          <span class="cn">AI看到：<br>没有腿 + 有鳍<br>+ 住在水里 + 有鳞片<br>→ <strong>鱼！</strong></span>
+          <span class="en">AI sees:<br>No legs + has fins<br>+ lives in water + scales<br>→ <strong>Fish!</strong></span>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <div style="font-size:2em">🦅</div>
+          <div style="font-weight:700"><span class="cn">老鹰</span><span class="en">Eagle</span></div>
+        </div>
+        <div class="flip-back">
+          <span class="cn">AI看到：<br>2条腿 + 有翅膀<br>+ 有羽毛 + 会飞<br>→ <strong>鸟！</strong></span>
+          <span class="en">AI sees:<br>2 legs + has wings<br>+ feathers + can fly<br>→ <strong>Bird!</strong></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 8: Activity -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <div class="badge" style="background:rgba(253,121,168,.4)">
+    <span class="cn">🎯 互动时间</span><span class="en">🎯 Activity Time</span>
+  </div>
+  <h2>
+    <span class="cn">和爸爸一起做"训练AI"游戏！</span>
+    <span class="en">Play "Train the AI" with Dad!</span>
+  </h2>
+  <p style="margin-top:12px">
+    <span class="cn">用 <span class="glow">10 张卡片</span>（5个水果 + 5个动物）<br>教弟弟/妹妹（假装是AI）分类！</span>
+    <span class="en">Use <span class="glow">10 cards</span> (5 fruits + 5 animals)<br>and teach a sibling (pretend they're AI) to sort them!</span>
+  </p>
+  <div class="card-grid" style="margin-top:16px">
+    <div class="card">
+      <div class="card-emoji">🍎🍌🍊🍇🍓</div>
+      <div class="card-title"><span class="cn">水果组</span><span class="en">Fruit Group</span></div>
+      <div class="card-desc">
+        <span class="cn">5张水果卡片</span>
+        <span class="en">5 fruit cards</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-emoji">🐶🐱🐰🐻🐼</div>
+      <div class="card-title"><span class="cn">动物组</span><span class="en">Animal Group</span></div>
+      <div class="card-desc">
+        <span class="cn">5张动物卡片</span>
+        <span class="en">5 animal cards</span>
+      </div>
+    </div>
+  </div>
+  <p style="margin-top:16px;font-size:.85em;color:var(--muted)">
+    <span class="cn">看看"AI"看了几张就能学会分类？</span>
+    <span class="en">See how many cards the "AI" needs to learn sorting!</span>
+  </p>
+</section>
+
+<!-- Slide 9: Summary -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <h2>
+    <span class="cn">今天学到了 ✨</span>
+    <span class="en">What We Learned ✨</span>
+  </h2>
+  <ul class="summary-list">
+    <li>
+      <span class="num">1</span>
+      <span><span class="cn">AI 和你一样，通过<span class="glow">看很多例子</span>来学习</span><span class="en">AI learns by <span class="glow">seeing lots of examples</span>, just like you</span></span>
+    </li>
+    <li>
+      <span class="num">2</span>
+      <span><span class="cn"><span class="glow">训练数据</span>就是我们给 AI 看的例子</span><span class="en"><span class="glow">Training Data</span> is the examples we show AI</span></span>
+    </li>
+    <li>
+      <span class="num">3</span>
+      <span><span class="cn">AI 学习三步：收集数据 → 找规律 → 学会</span><span class="en">AI learns in 3 steps: Collect data → Find patterns → Learned</span></span>
+    </li>
+    <li>
+      <span class="num">4</span>
+      <span><span class="cn">数据越多，AI <span class="glow">学得越好</span></span><span class="en">More data means AI <span class="glow">learns better</span></span></span>
+    </li>
+  </ul>
+  <p style="margin-top:20px;color:var(--muted);font-size:.9em">
+    <span class="cn">下节课：👁️ AI 能看能听能说</span>
+    <span class="en">Next: 👁️ AI Can See, Hear & Speak</span>
+  </p>
+</section>
+
+</div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+Reveal.initialize({
+  hash:true, slideNumber:'c/t', controls:true, progress:false,
+  transition:'fade', transitionSpeed:'fast',
+});
+Reveal.on('slidechanged', e=>{
+  const pct=(e.indexh/(Reveal.getTotalSlides()-1)*100).toFixed(1);
+  document.getElementById('prog-fill').style.width=pct+'%';
+});
+function setLang(l){
+  document.body.className='lang-'+l;
+  document.querySelectorAll('#lang-toggle button').forEach((b,i)=>{
+    b.classList.toggle('active',(i===0&&l==='cn')||(i===1&&l==='en'));
+  });
+  localStorage.setItem('kai-lang',l);
+}
+setLang(localStorage.getItem('kai-lang')||'cn');
+</script>
+</body>
+</html>

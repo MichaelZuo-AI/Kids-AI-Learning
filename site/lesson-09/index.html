@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>09 · AI 也会犯错</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="../theme.css">
+</head>
+<body class="lang-cn">
+
+<a class="back-btn" href="../">← <span class="cn">课程目录</span><span class="en">All Lessons</span></a>
+<div id="lang-toggle">
+  <button class="active" onclick="setLang('cn')">中文</button>
+  <button onclick="setLang('en')">EN</button>
+</div>
+<div id="prog"><div id="prog-fill" style="width:0%"></div></div>
+
+<div class="reveal">
+<div class="slides">
+
+<!-- Slide 1: Title -->
+<section data-background="linear-gradient(135deg,#1a0033 0%,#2d1b69 50%,#4a1a8a 100%)">
+  <div class="badge" style="background:rgba(253,121,168,.4)">
+    <span class="cn">Unit 4 · 第1课</span><span class="en">Unit 4 · Lesson 1</span>
+  </div>
+  <div style="font-size:3.5em;margin:12px 0" class="float">❌</div>
+  <h1>
+    <span class="cn">AI 也会犯错</span>
+    <span class="en">AI Makes Mistakes Too</span>
+  </h1>
+  <p style="color:var(--muted)">
+    <span class="cn">了解 AI 的局限，学会独立思考</span>
+    <span class="en">Understand AI limitations and think critically</span>
+  </p>
+</section>
+
+<!-- Slide 2: Hook question -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <div style="font-size:2.5em;margin-bottom:16px">🤔</div>
+  <h2>
+    <span class="cn">你有没有见过大人犯错？<br>老师犯错？爸爸犯错？</span>
+    <span class="en">Have you ever seen adults make mistakes?<br>Teachers? Even Dad?</span>
+  </h2>
+  <p style="color:var(--muted);margin-top:16px">
+    <span class="cn">犯错是正常的！每个人都会犯错——AI 也一样！</span>
+    <span class="en">Making mistakes is normal! Everyone makes them — and so does AI!</span>
+  </p>
+</section>
+
+<!-- Slide 3: Three types of AI mistakes -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <h2>
+    <span class="cn">AI 会犯的<span class="glow">三种错误</span></span>
+    <span class="en">Three Types of <span class="glow">AI Mistakes</span></span>
+  </h2>
+  <div class="card-grid cols-3" style="margin-top:16px">
+    <div class="card" style="border-color:rgba(253,121,168,.3)">
+      <div class="card-emoji">🌀</div>
+      <div class="card-title"><span class="cn">幻觉 Hallucination</span><span class="en">Hallucination</span></div>
+      <div class="card-desc">
+        <span class="cn">AI 有时候会"乱说"，<br>编造不存在的事实</span>
+        <span class="en">AI sometimes "makes things up"<br>— invents fake facts</span>
+      </div>
+    </div>
+    <div class="card" style="border-color:rgba(253,121,168,.3)">
+      <div class="card-emoji">📅</div>
+      <div class="card-title"><span class="cn">知识过时</span><span class="en">Outdated Knowledge</span></div>
+      <div class="card-desc">
+        <span class="cn">AI 学习的数据<br>有截止日期</span>
+        <span class="en">AI's training data<br>has a cutoff date</span>
+      </div>
+    </div>
+    <div class="card" style="border-color:rgba(253,121,168,.3)">
+      <div class="card-emoji">⚖️</div>
+      <div class="card-title"><span class="cn">偏见 Bias</span><span class="en">Bias</span></div>
+      <div class="card-desc">
+        <span class="cn">AI 学的数据有<br>人类的偏见</span>
+        <span class="en">AI can reflect<br>human biases in its data</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 4: Fun examples of AI mistakes (flip cards) -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <h2>
+    <span class="cn">AI 犯的搞笑错误 😂</span>
+    <span class="en">Funny AI Mistakes 😂</span>
+  </h2>
+  <p style="font-size:.9em;color:var(--muted);margin-bottom:12px">
+    <span class="cn">点击卡片，看看 AI 说错了什么！</span>
+    <span class="en">Tap a card to see what AI got wrong!</span>
+  </p>
+  <div class="card-grid cols-3" style="margin-top:8px">
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <div style="font-size:1.6em">🐧</div>
+          <div style="font-weight:700;font-size:.9em">
+            <span class="cn">AI说：<br>"企鹅会飞"</span>
+            <span class="en">AI says:<br>"Penguins can fly"</span>
+          </div>
+        </div>
+        <div class="flip-back">
+          <span class="cn">错！企鹅不会飞，<br>但它们是<span class="glow">游泳冠军</span>！🏊</span>
+          <span class="en">Wrong! Penguins can't fly,<br>but they're <span class="glow">swimming champions</span>! 🏊</span>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <div style="font-size:1.6em">🍫</div>
+          <div style="font-weight:700;font-size:.9em">
+            <span class="cn">AI说：<br>"巧克力是蔬菜"</span>
+            <span class="en">AI says:<br>"Chocolate is a vegetable"</span>
+          </div>
+        </div>
+        <div class="flip-back">
+          <span class="cn">哈哈才不是！<br>巧克力是用可可豆做的<span class="glow">甜食</span>！🍬</span>
+          <span class="en">Haha, no way!<br>Chocolate is a <span class="glow">sweet treat</span> made from cocoa beans! 🍬</span>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <div style="font-size:1.6em">🌕</div>
+          <div style="font-weight:700;font-size:.9em">
+            <span class="cn">AI说：<br>"月球是方的"</span>
+            <span class="en">AI says:<br>"The moon is square"</span>
+          </div>
+        </div>
+        <div class="flip-back">
+          <span class="cn">当然不是！<br>月球是<span class="glow">圆的</span>，<br>你晚上看看就知道了！🌙</span>
+          <span class="en">Of course not!<br>The moon is <span class="glow">round</span> —<br>just look up at night! 🌙</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 5: Mewtwo Says -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <div class="mewtwo-bubble">
+    <div class="avatar float">🟣</div>
+    <div class="speech">
+      <span class="cn">
+        "就算是我，也有技能命中率不是100%的时候。聪明的训练家会在重要时刻<span class="glow">自己判断</span>，不会完全依赖一只宝可梦！"
+      </span>
+      <span class="en">
+        "Even I don't have 100% accuracy on every move. A smart trainer <span class="glow">uses their own judgment</span> at critical moments — they don't rely entirely on one Pokémon!"
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 6: 验证三步法 -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <h2>
+    <span class="cn"><span class="glow">验证三步法</span></span>
+    <span class="en">The <span class="glow">3-Step Check</span></span>
+  </h2>
+  <div class="card-grid cols-3" style="margin-top:16px">
+    <div class="card" style="border-color:rgba(116,185,255,.3)">
+      <div class="card-emoji">🔎</div>
+      <div class="card-title"><span class="cn">① 问一问 Ask</span><span class="en">① Ask</span></div>
+      <div class="card-desc">
+        <span class="cn">这是真的吗？<br>AI 说得对吗？</span>
+        <span class="en">Is this true?<br>Is AI correct?</span>
+      </div>
+    </div>
+    <div class="card" style="border-color:rgba(116,185,255,.3)">
+      <div class="card-emoji">🤔</div>
+      <div class="card-title"><span class="cn">② 想一想 Think</span><span class="en">② Think</span></div>
+      <div class="card-desc">
+        <span class="cn">根据你知道的，<br>有道理吗？</span>
+        <span class="en">Based on what you know,<br>does it make sense?</span>
+      </div>
+    </div>
+    <div class="card" style="border-color:rgba(116,185,255,.3)">
+      <div class="card-emoji">📖</div>
+      <div class="card-title"><span class="cn">③ 查一查 Check</span><span class="en">③ Check</span></div>
+      <div class="card-desc">
+        <span class="cn">问爸爸、看书、<br>或查可靠来源</span>
+        <span class="en">Ask Dad, read a book,<br>or check a trusted source</span>
+      </div>
+    </div>
+  </div>
+  <p style="margin-top:16px;font-size:.95em;color:var(--muted)">
+    <span class="cn">重要的事情，一定要<span class="glow">验证</span>！</span>
+    <span class="en">For important things, always <span class="glow">verify</span>!</span>
+  </p>
+</section>
+
+<!-- Slide 7: Interactive quiz — True or False -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <h2>
+    <span class="cn">真假判断！<span class="glow">True or False?</span></span>
+    <span class="en"><span class="glow">True or False?</span></span>
+  </h2>
+  <p style="font-size:.85em;color:var(--muted);margin-bottom:12px">
+    <span class="cn">点击卡片揭晓答案！</span>
+    <span class="en">Tap a card to reveal the answer!</span>
+  </p>
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;max-width:600px;margin:0 auto">
+    <div class="card" style="flex:1;min-width:100px;max-width:110px;cursor:pointer;padding:14px 8px" onclick="var a=this.querySelector('.answer');a.style.display=a.style.display==='none'?'block':'none'">
+      <div class="card-emoji">🐕</div>
+      <div class="card-desc" style="font-size:.85em">
+        <span class="cn">狗有4条腿</span><span class="en">Dogs have 4 legs</span>
+      </div>
+      <div class="answer" style="display:none;margin-top:6px;font-weight:700;color:var(--green)">✅ TRUE</div>
+    </div>
+    <div class="card" style="flex:1;min-width:100px;max-width:110px;cursor:pointer;padding:14px 8px" onclick="var a=this.querySelector('.answer');a.style.display=a.style.display==='none'?'block':'none'">
+      <div class="card-emoji">🦈</div>
+      <div class="card-desc" style="font-size:.85em">
+        <span class="cn">鲨鱼是哺乳动物</span><span class="en">Sharks are mammals</span>
+      </div>
+      <div class="answer" style="display:none;margin-top:6px;font-weight:700;color:var(--pink)">
+        ❌ FALSE<br>
+        <span style="font-size:.8em;font-weight:400;color:var(--muted)"><span class="cn">鲨鱼是鱼类！</span><span class="en">They're fish!</span></span>
+      </div>
+    </div>
+    <div class="card" style="flex:1;min-width:100px;max-width:110px;cursor:pointer;padding:14px 8px" onclick="var a=this.querySelector('.answer');a.style.display=a.style.display==='none'?'block':'none'">
+      <div class="card-emoji">🌍</div>
+      <div class="card-desc" style="font-size:.85em">
+        <span class="cn">地球绕着太阳转</span><span class="en">Earth orbits the Sun</span>
+      </div>
+      <div class="answer" style="display:none;margin-top:6px;font-weight:700;color:var(--green)">✅ TRUE</div>
+    </div>
+    <div class="card" style="flex:1;min-width:100px;max-width:110px;cursor:pointer;padding:14px 8px" onclick="var a=this.querySelector('.answer');a.style.display=a.style.display==='none'?'block':'none'">
+      <div class="card-emoji">🍌</div>
+      <div class="card-desc" style="font-size:.85em">
+        <span class="cn">香蕉是蓝色的</span><span class="en">Bananas are blue</span>
+      </div>
+      <div class="answer" style="display:none;margin-top:6px;font-weight:700;color:var(--pink)">❌ FALSE</div>
+    </div>
+    <div class="card" style="flex:1;min-width:100px;max-width:110px;cursor:pointer;padding:14px 8px" onclick="var a=this.querySelector('.answer');a.style.display=a.style.display==='none'?'block':'none'">
+      <div class="card-emoji">🌙</div>
+      <div class="card-desc" style="font-size:.85em">
+        <span class="cn">月球上没有空气</span><span class="en">No air on the Moon</span>
+      </div>
+      <div class="answer" style="display:none;margin-top:6px;font-weight:700;color:var(--green)">✅ TRUE</div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 8: Activity — Make AI get it wrong -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <div class="badge" style="background:rgba(253,121,168,.4)">
+    <span class="cn">🎯 互动时间</span><span class="en">🎯 Activity Time</span>
+  </div>
+  <h2>
+    <span class="cn">故意让 AI <span class="glow">犯错</span>！</span>
+    <span class="en">Make AI <span class="glow">Get It Wrong</span>!</span>
+  </h2>
+  <div class="card-grid cols-3" style="margin-top:16px">
+    <div class="card">
+      <div class="card-emoji">❓</div>
+      <div class="card-title"><span class="cn">第 1 步</span><span class="en">Step 1</span></div>
+      <div class="card-desc">
+        <span class="cn">问 AI 一个<br><span class="glow">你已经知道答案</span>的问题</span>
+        <span class="en">Ask AI a question<br><span class="glow">you already know the answer to</span></span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-emoji">🔍</div>
+      <div class="card-title"><span class="cn">第 2 步</span><span class="en">Step 2</span></div>
+      <div class="card-desc">
+        <span class="cn">看看 AI<br>说对了吗？</span>
+        <span class="en">Check:<br>did AI get it right?</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-emoji">🎉</div>
+      <div class="card-title"><span class="cn">第 3 步</span><span class="en">Step 3</span></div>
+      <div class="card-desc">
+        <span class="cn">如果说错了，告诉爸爸<br>"<span class="glow">AI犯错了！</span>"<br>并说出正确答案</span>
+        <span class="en">If wrong, tell Dad<br>"<span class="glow">AI made a mistake!</span>"<br>and give the right answer</span>
+      </div>
+    </div>
+  </div>
+  <p style="margin-top:12px;font-size:.85em;color:var(--muted)">
+    <span class="cn">能发现 AI 的错误，说明你比 AI 更聪明！</span>
+    <span class="en">If you can spot AI's mistakes, you're smarter than AI!</span>
+  </p>
+</section>
+
+<!-- Slide 9: Summary -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <h2>
+    <span class="cn">今天学到了 ✨</span>
+    <span class="en">What We Learned ✨</span>
+  </h2>
+  <ul class="summary-list">
+    <li>
+      <span class="num">1</span>
+      <span><span class="cn"><span class="glow">AI 也会犯错</span>——这很正常</span><span class="en"><span class="glow">AI makes mistakes</span> — and that's normal</span></span>
+    </li>
+    <li>
+      <span class="num">2</span>
+      <span><span class="cn">三种错误：<span class="glow">幻觉、知识过时、偏见</span></span><span class="en">Three types: <span class="glow">Hallucination, Outdated Knowledge, Bias</span></span></span>
+    </li>
+    <li>
+      <span class="num">3</span>
+      <span><span class="cn"><span class="glow">验证三步法</span>：问一问 → 想一想 → 查一查</span><span class="en"><span class="glow">3-Step Check</span>: Ask → Think → Check</span></span>
+    </li>
+    <li>
+      <span class="num">4</span>
+      <span><span class="cn">重要的事，<span class="glow">自己想想对不对</span></span><span class="en">For important things, <span class="glow">think for yourself</span></span></span>
+    </li>
+  </ul>
+  <p style="margin-top:20px;color:var(--muted);font-size:.9em">
+    <span class="cn">下节课：⚖️ AI 能做什么，不能做什么</span>
+    <span class="en">Next: ⚖️ What AI Can and Can't Do</span>
+  </p>
+</section>
+
+</div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+Reveal.initialize({
+  hash:true, slideNumber:'c/t', controls:true, progress:false,
+  transition:'fade', transitionSpeed:'fast',
+});
+Reveal.on('slidechanged', e=>{
+  const pct=(e.indexh/(Reveal.getTotalSlides()-1)*100).toFixed(1);
+  document.getElementById('prog-fill').style.width=pct+'%';
+});
+function setLang(l){
+  document.body.className='lang-'+l;
+  document.querySelectorAll('#lang-toggle button').forEach((b,i)=>{
+    b.classList.toggle('active',(i===0&&l==='cn')||(i===1&&l==='en'));
+  });
+  localStorage.setItem('kai-lang',l);
+}
+setLang(localStorage.getItem('kai-lang')||'cn');
+</script>
+</body>
+</html>

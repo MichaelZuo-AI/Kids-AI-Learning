@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>08 · 和 AI 一起创作</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="../theme.css">
+</head>
+<body class="lang-cn">
+
+<a class="back-btn" href="../">← <span class="cn">课程目录</span><span class="en">All Lessons</span></a>
+<div id="lang-toggle">
+  <button class="active" onclick="setLang('cn')">中文</button>
+  <button onclick="setLang('en')">EN</button>
+</div>
+<div id="prog"><div id="prog-fill" style="width:0%"></div></div>
+
+<div class="reveal">
+<div class="slides">
+
+<!-- Slide 1: Title -->
+<section data-background="linear-gradient(135deg,#1a0033 0%,#2d1b69 50%,#4a1a8a 100%)">
+  <div class="badge" style="background:rgba(85,239,196,.4)">
+    <span class="cn">Unit 3 · 第2课</span><span class="en">Unit 3 · Lesson 2</span>
+  </div>
+  <div style="font-size:3.5em;margin:12px 0" class="float">🎭</div>
+  <h1>
+    <span class="cn">和 AI 一起创作</span>
+    <span class="en">Create Together with AI</span>
+  </h1>
+  <p style="color:var(--muted)">
+    <span class="cn">人机协作：AI 是助手，不是替代品</span>
+    <span class="en">Human-AI collaboration: AI is your assistant, not your replacement</span>
+  </p>
+</section>
+
+<!-- Slide 2: Hook question -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <div style="font-size:2.5em;margin-bottom:16px">🤔</div>
+  <h2>
+    <span class="cn">如果 AI 可以帮你做所有事情，<br>你还需要动脑筋吗？</span>
+    <span class="en">If AI could do everything for you,<br>would you still need to think?</span>
+  </h2>
+  <p style="color:var(--muted);margin-top:16px">
+    <span class="cn">我们来讨论一下！</span>
+    <span class="en">Let's discuss!</span>
+  </p>
+</section>
+
+<!-- Slide 3: Core idea — Director & Actor -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <h2>
+    <span class="cn">你和 AI 的关系</span>
+    <span class="en">Your Relationship with AI</span>
+  </h2>
+  <div class="card-grid" style="margin-top:20px">
+    <div class="card" style="border-color:rgba(85,239,196,.3)">
+      <div class="card-emoji">🎬</div>
+      <div class="card-title"><span class="cn">你 = 导演 Director</span><span class="en">You = Director</span></div>
+      <div class="card-desc">
+        <span class="cn"><span class="glow">创意来自你</span><br>你决定做什么、怎么做</span>
+        <span class="en"><span class="glow">Creativity comes from you</span><br>You decide what to do and how</span>
+      </div>
+    </div>
+    <div class="card" style="border-color:rgba(85,239,196,.3)">
+      <div class="card-emoji">🎭</div>
+      <div class="card-title"><span class="cn">AI = 演员 Actor</span><span class="en">AI = Actor</span></div>
+      <div class="card-desc">
+        <span class="cn"><span class="glow">执行靠 AI</span><br>AI 按你的想法去完成</span>
+        <span class="en"><span class="glow">Execution by AI</span><br>AI carries out your ideas</span>
+      </div>
+    </div>
+  </div>
+  <p style="margin-top:16px;font-size:.9em;color:var(--muted)">
+    <span class="cn">没有导演，演员不知道演什么！</span>
+    <span class="en">Without a director, the actor doesn't know what to perform!</span>
+  </p>
+</section>
+
+<!-- Slide 4: Three collaboration modes -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <h2>
+    <span class="cn">三种<span class="glow">合作模式</span></span>
+    <span class="en">Three <span class="glow">Collaboration Modes</span></span>
+  </h2>
+  <div class="card-grid cols-3" style="margin-top:16px">
+    <div class="card" style="border-color:rgba(85,239,196,.3)">
+      <div class="card-emoji">🌱</div>
+      <div class="card-title"><span class="cn">你想，AI写</span><span class="en">You Think, AI Writes</span></div>
+      <div class="card-desc">
+        <span class="cn">你有想法，让 AI 帮你表达</span>
+        <span class="en">You have the idea, AI helps you express it</span>
+      </div>
+    </div>
+    <div class="card" style="border-color:rgba(85,239,196,.3)">
+      <div class="card-emoji">🔄</div>
+      <div class="card-title"><span class="cn">AI起稿，你修改</span><span class="en">AI Drafts, You Refine</span></div>
+      <div class="card-desc">
+        <span class="cn">AI 给初稿，你来完善</span>
+        <span class="en">AI gives first draft, you make it better</span>
+      </div>
+    </div>
+    <div class="card" style="border-color:rgba(85,239,196,.3)">
+      <div class="card-emoji">💡</div>
+      <div class="card-title"><span class="cn">AI建议，你决定</span><span class="en">AI Suggests, You Decide</span></div>
+      <div class="card-desc">
+        <span class="cn">AI 提供选项，你做决定</span>
+        <span class="en">AI offers options, you make the call</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 5: Mewtwo Says -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <div class="mewtwo-bubble">
+    <div class="avatar float">🟣</div>
+    <div class="speech">
+      <span class="cn">
+        "最好的创作，是你的想象力加上我的能力。少了你，我只是在复制别人的东西。<span class="glow">你才是创作的灵魂！</span>"
+      </span>
+      <span class="en">
+        "The best creations combine your imagination with my abilities. Without you, I'm just copying others. <span class="glow">You are the soul of creation!</span>"
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 6: Gentle discussion — AI doing all homework -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <h2>
+    <span class="cn">如果 AI 帮你做<span class="glow">所有</span>作业…</span>
+    <span class="en">If AI did <span class="glow">ALL</span> your homework…</span>
+  </h2>
+  <div class="card-grid cols-3" style="margin-top:16px">
+    <div class="card">
+      <div class="card-emoji">📉</div>
+      <div class="card-title"><span class="cn">学不到东西</span><span class="en">You Don't Learn</span></div>
+      <div class="card-desc">
+        <span class="cn">做作业是为了让你学会呀</span>
+        <span class="en">Homework is how you learn new things</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-emoji">🌱</div>
+      <div class="card-title"><span class="cn">不会成长</span><span class="en">You Don't Grow</span></div>
+      <div class="card-desc">
+        <span class="cn">遇到困难才能变强</span>
+        <span class="en">Facing challenges makes you stronger</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-emoji">💪</div>
+      <div class="card-title"><span class="cn">大脑要锻炼</span><span class="en">Brain Needs Exercise</span></div>
+      <div class="card-desc">
+        <span class="cn">大脑就像肌肉，越用越强</span>
+        <span class="en">Your brain is like a muscle — use it or lose it!</span>
+      </div>
+    </div>
+  </div>
+  <p style="margin-top:16px;font-size:.95em;color:var(--muted)">
+    <span class="cn">AI 应该帮你学得<span class="green">更多</span>，而不是学得<span class="pink">更少</span></span>
+    <span class="en">AI should help you learn <span class="green">MORE</span>, not learn <span class="pink">LESS</span></span>
+  </p>
+</section>
+
+<!-- Slide 7: Things ONLY YOU can do -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <h2>
+    <span class="cn">这些事，<span class="glow">只有你</span>能做！</span>
+    <span class="en">Things <span class="glow">ONLY YOU</span> Can Do!</span>
+  </h2>
+  <div class="card-grid" style="margin-top:16px">
+    <div class="card" style="border-color:rgba(85,239,196,.3)">
+      <div class="card-emoji">❤️</div>
+      <div class="card-title"><span class="cn">有真实感受</span><span class="en">Real Feelings</span></div>
+      <div class="card-desc">
+        <span class="cn">开心、难过、感动…<br>这些是真的</span>
+        <span class="en">Joy, sadness, wonder…<br>These are real</span>
+      </div>
+    </div>
+    <div class="card" style="border-color:rgba(85,239,196,.3)">
+      <div class="card-emoji">🌟</div>
+      <div class="card-title"><span class="cn">有独特经历</span><span class="en">Unique Experiences</span></div>
+      <div class="card-desc">
+        <span class="cn">你的故事，<br>世界上独一无二</span>
+        <span class="en">Your stories are<br>one of a kind</span>
+      </div>
+    </div>
+    <div class="card" style="border-color:rgba(85,239,196,.3)">
+      <div class="card-emoji">⚖️</div>
+      <div class="card-title"><span class="cn">做出价值判断</span><span class="en">Value Judgments</span></div>
+      <div class="card-desc">
+        <span class="cn">什么是对、什么是错，<br>你有自己的判断</span>
+        <span class="en">Right and wrong —<br>you have your own compass</span>
+      </div>
+    </div>
+    <div class="card" style="border-color:rgba(85,239,196,.3)">
+      <div class="card-emoji">👨‍👩‍👧</div>
+      <div class="card-title"><span class="cn">真正爱你的人</span><span class="en">People Who Love You</span></div>
+      <div class="card-desc">
+        <span class="cn">家人的爱，<br>AI 永远给不了</span>
+        <span class="en">Family love is something<br>AI can never give</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 8: Activity — Mini picture book -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <div class="badge" style="background:rgba(253,121,168,.4)">
+    <span class="cn">🎯 互动时间</span><span class="en">🎯 Activity Time</span>
+  </div>
+  <h2>
+    <span class="cn">合作创作一本 3 页的<span class="glow">迷你绘本</span>！</span>
+    <span class="en">Create a 3-Page <span class="glow">Mini Picture Book</span> Together!</span>
+  </h2>
+  <p style="margin-top:8px;font-size:.9em;color:var(--muted)">
+    <span class="cn">🎬 Damian 决定：主角 + 地点 + 事件 → 🎭 AI 写：文字 + 图片描述 → 👨 爸爸帮忙：打印或保存！</span>
+    <span class="en">🎬 Damian decides: hero + place + event → 🎭 AI writes: text + image descriptions → 👨 Dad helps: print or save!</span>
+  </p>
+  <div class="card-grid cols-3" style="margin-top:16px">
+    <div class="card" style="border-color:rgba(85,239,196,.3)">
+      <div class="card-emoji">📖</div>
+      <div class="card-title"><span class="cn">第 1 页</span><span class="en">Page 1</span></div>
+      <div class="card-desc">
+        <span class="cn">主角出场！<br>他/她是谁？在哪里？</span>
+        <span class="en">Hero appears!<br>Who are they? Where?</span>
+      </div>
+    </div>
+    <div class="card" style="border-color:rgba(85,239,196,.3)">
+      <div class="card-emoji">⚡</div>
+      <div class="card-title"><span class="cn">第 2 页</span><span class="en">Page 2</span></div>
+      <div class="card-desc">
+        <span class="cn">发生了什么事？<br>遇到了什么挑战？</span>
+        <span class="en">What happened?<br>What challenge appeared?</span>
+      </div>
+    </div>
+    <div class="card" style="border-color:rgba(85,239,196,.3)">
+      <div class="card-emoji">🌟</div>
+      <div class="card-title"><span class="cn">第 3 页</span><span class="en">Page 3</span></div>
+      <div class="card-desc">
+        <span class="cn">怎么解决的？<br>结局是什么？</span>
+        <span class="en">How was it solved?<br>What's the ending?</span>
+      </div>
+    </div>
+  </div>
+  <p style="margin-top:12px;font-size:.85em;color:var(--muted)">
+    <span class="cn">记住：你是导演🎬，AI 是你的助手🎭！</span>
+    <span class="en">Remember: You're the director 🎬, AI is your assistant 🎭!</span>
+  </p>
+</section>
+
+<!-- Slide 9: Unit 3 Completion -->
+<section data-background="linear-gradient(135deg,#1a0033 0%,#2d1b69 50%,#4a1a8a 100%)">
+  <div style="font-size:3em;margin-bottom:12px" class="pop">🎉</div>
+  <h1>
+    <span class="cn">Unit 3 完成！</span>
+    <span class="en">Unit 3 Complete!</span>
+  </h1>
+  <div class="unit-complete" style="margin-top:16px">
+    <div class="check-item">
+      <span class="tick">✅</span>
+      <span><span class="cn">学会了写出清晰的 Prompt</span><span class="en">Learned to write clear Prompts</span></span>
+    </div>
+    <div class="check-item">
+      <span class="tick">✅</span>
+      <span><span class="cn">掌握了 Prompt 四要素和魔法词</span><span class="en">Mastered the 4 Prompt elements and magic words</span></span>
+    </div>
+    <div class="check-item">
+      <span class="tick">✅</span>
+      <span><span class="cn">了解了人机协作的正确方式</span><span class="en">Understood the right way to collaborate with AI</span></span>
+    </div>
+  </div>
+  <p style="margin-top:20px;font-size:1.1em;font-weight:700">
+    <span class="cn">接下来：Unit 4 — AI 和我们的世界</span>
+    <span class="en">Next: Unit 4 — AI and Our World</span>
+  </p>
+  <a href="../" class="btn btn-glow" style="margin-top:16px;text-decoration:none">
+    <span class="cn">返回课程目录</span>
+    <span class="en">Back to Course Catalog</span>
+  </a>
+</section>
+
+</div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+Reveal.initialize({
+  hash:true, slideNumber:'c/t', controls:true, progress:false,
+  transition:'fade', transitionSpeed:'fast',
+});
+Reveal.on('slidechanged', e=>{
+  const pct=(e.indexh/(Reveal.getTotalSlides()-1)*100).toFixed(1);
+  document.getElementById('prog-fill').style.width=pct+'%';
+});
+function setLang(l){
+  document.body.className='lang-'+l;
+  document.querySelectorAll('#lang-toggle button').forEach((b,i)=>{
+    b.classList.toggle('active',(i===0&&l==='cn')||(i===1&&l==='en'));
+  });
+  localStorage.setItem('kai-lang',l);
+}
+setLang(localStorage.getItem('kai-lang')||'cn');
+</script>
+</body>
+</html>

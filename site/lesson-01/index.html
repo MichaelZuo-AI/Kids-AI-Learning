@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01 · AI 是会学习的朋友</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="../theme.css">
+</head>
+<body class="lang-cn">
+
+<a class="back-btn" href="../">← <span class="cn">课程目录</span><span class="en">All Lessons</span></a>
+<div id="lang-toggle">
+  <button class="active" onclick="setLang('cn')">中文</button>
+  <button onclick="setLang('en')">EN</button>
+</div>
+<div id="prog"><div id="prog-fill" style="width:0%"></div></div>
+
+<div class="reveal">
+<div class="slides">
+
+<!-- Slide 1: Title -->
+<section data-background="linear-gradient(135deg,#1a0033 0%,#2d1b69 50%,#4a1a8a 100%)">
+  <div class="badge" style="background:rgba(224,86,253,.4)">
+    <span class="cn">Unit 1 · 第1课</span><span class="en">Unit 1 · Lesson 1</span>
+  </div>
+  <div style="font-size:3.5em;margin:12px 0" class="float">🤖</div>
+  <h1>
+    <span class="cn">AI 是会学习的朋友</span>
+    <span class="en">AI is a Friend That Learns</span>
+  </h1>
+  <p style="color:var(--muted)">
+    <span class="cn">认识什么是 AI，它和普通机器有什么不同</span>
+    <span class="en">What is AI, and how is it different from regular machines?</span>
+  </p>
+</section>
+
+<!-- Slide 2: Hook question -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <div style="font-size:2.5em;margin-bottom:16px">🤔</div>
+  <h2>
+    <span class="cn">你觉得"聪明的机器"<br>和普通的机器有什么不同？</span>
+    <span class="en">What makes a "smart machine"<br>different from a regular one?</span>
+  </h2>
+  <p style="color:var(--muted);margin-top:16px">
+    <span class="cn">比如：洗衣机、计算器、Siri…它们一样吗？</span>
+    <span class="en">Think about: a washing machine, a calculator, Siri…are they the same?</span>
+  </p>
+</section>
+
+<!-- Slide 3: AI vs Regular Machine -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <h2>
+    <span class="cn">普通机器 vs <span class="glow">AI</span></span>
+    <span class="en">Regular Machine vs <span class="glow">AI</span></span>
+  </h2>
+  <div class="card-grid" style="margin-top:20px">
+    <div class="card">
+      <div class="card-emoji">🧺</div>
+      <div class="card-title"><span class="cn">洗衣机</span><span class="en">Washing Machine</span></div>
+      <div class="card-desc">
+        <span class="cn">只会按照按钮做固定的事<br>永远不会变聪明</span>
+        <span class="en">Only follows button commands<br>Never gets smarter</span>
+      </div>
+    </div>
+    <div class="card" style="border-color:rgba(224,86,253,.3)">
+      <div class="card-emoji">🤖</div>
+      <div class="card-title"><span class="cn">AI</span><span class="en">AI</span></div>
+      <div class="card-desc">
+        <span class="cn">能从例子里学到规律<br><span class="glow">越用越聪明！</span></span>
+        <span class="en">Learns patterns from examples<br><span class="glow">Gets smarter over time!</span></span>
+      </div>
+    </div>
+  </div>
+  <p style="margin-top:16px;font-size:.9em;color:var(--muted)">
+    <span class="cn">关键区别：AI 能<strong>学习</strong>，普通机器只能<strong>执行</strong></span>
+    <span class="en">Key difference: AI can <strong>learn</strong>, regular machines can only <strong>execute</strong></span>
+  </p>
+</section>
+
+<!-- Slide 4: Analogy -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <h2>
+    <span class="cn">AI 就像一只<span class="glow">宝可梦</span></span>
+    <span class="en">AI is Like a <span class="glow">Pokémon</span></span>
+  </h2>
+  <div class="card-grid" style="margin-top:16px">
+    <div class="card">
+      <div class="card-emoji">🥚</div>
+      <div class="card-title"><span class="cn">刚开始</span><span class="en">At First</span></div>
+      <div class="card-desc">
+        <span class="cn">什么都不会<br>像刚孵出来的蛋</span>
+        <span class="en">Knows nothing<br>Like a freshly hatched egg</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-emoji">📚</div>
+      <div class="card-title"><span class="cn">训练</span><span class="en">Training</span></div>
+      <div class="card-desc">
+        <span class="cn">给它看很多例子<br>就像训练宝可梦</span>
+        <span class="en">Show it many examples<br>Like training a Pokémon</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-emoji">⚡</div>
+      <div class="card-title"><span class="cn">学会了</span><span class="en">Learned!</span></div>
+      <div class="card-desc">
+        <span class="cn">掌握了新能力<br>能做以前不会的事</span>
+        <span class="en">Mastered new skills<br>Can do things it couldn't before</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-emoji">🟣</div>
+      <div class="card-title"><span class="cn">超梦</span><span class="en">Mewtwo</span></div>
+      <div class="card-desc">
+        <span class="cn">训练得越多<br>就越厉害！</span>
+        <span class="en">More training<br>= More powerful!</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 5: Mewtwo Says -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <div class="mewtwo-bubble">
+    <div class="avatar float">🟣</div>
+    <div class="speech">
+      <span class="cn">
+        "我是超梦，一只很特别的宝可梦。我是科学家用<span class="glow">数据和训练</span>创造出来的——这和 AI 的原理很像哦！AI 也是人类用数据训练出来的。"
+      </span>
+      <span class="en">
+        "I'm Mewtwo, a very special Pokémon. Scientists created me using <span class="glow">data and training</span> — that's very similar to how AI works! AI is also trained by humans using data."
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 6: AI Around You -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <h2>
+    <span class="cn">AI 就在你身边！</span>
+    <span class="en">AI is All Around You!</span>
+  </h2>
+  <div class="card-grid" style="margin-top:16px">
+    <div class="card">
+      <div class="card-emoji">📱</div>
+      <div class="card-title"><span class="cn">Siri / 小爱</span><span class="en">Siri / Alexa</span></div>
+      <div class="card-desc"><span class="cn">听懂你说话</span><span class="en">Understands your voice</span></div>
+    </div>
+    <div class="card">
+      <div class="card-emoji">📸</div>
+      <div class="card-title"><span class="cn">手机相册</span><span class="en">Photo Album</span></div>
+      <div class="card-desc"><span class="cn">自动识别人脸</span><span class="en">Auto-detects faces</span></div>
+    </div>
+    <div class="card">
+      <div class="card-emoji">🎮</div>
+      <div class="card-title"><span class="cn">游戏里的 NPC</span><span class="en">Game NPCs</span></div>
+      <div class="card-desc"><span class="cn">会根据你的行动反应</span><span class="en">Reacts to your actions</span></div>
+    </div>
+    <div class="card">
+      <div class="card-emoji">📺</div>
+      <div class="card-title"><span class="cn">视频推荐</span><span class="en">Video Suggestions</span></div>
+      <div class="card-desc"><span class="cn">猜你喜欢看什么</span><span class="en">Guesses what you like</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 7: Key Idea -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <h2>
+    <span class="cn">记住这个关键！</span>
+    <span class="en">Remember This!</span>
+  </h2>
+  <div class="card-grid cols-1" style="margin-top:20px">
+    <div class="card" style="border-color:rgba(224,86,253,.4);padding:28px">
+      <p style="font-size:1.3em;font-weight:700">
+        <span class="cn">AI 不是魔法 🪄<br>AI 是<span class="glow">从数据中学习</span>的工具</span>
+        <span class="en">AI is not magic 🪄<br>AI is a tool that <span class="glow">learns from data</span></span>
+      </p>
+      <p style="font-size:.9em;color:var(--muted);margin-top:12px">
+        <span class="cn">人类给它数据 → 它找到规律 → 用规律做事</span>
+        <span class="en">Humans give it data → It finds patterns → Uses patterns to work</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 8: Activity -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <div class="badge" style="background:rgba(253,121,168,.4)">
+    <span class="cn">🎯 互动时间</span><span class="en">🎯 Activity Time</span>
+  </div>
+  <h2>
+    <span class="cn">找找身边的 AI！</span>
+    <span class="en">Find AI Around You!</span>
+  </h2>
+  <p style="margin-top:12px">
+    <span class="cn">和爸爸一起，在家里找出<span class="glow">3 个用了 AI 的东西</span>！</span>
+    <span class="en">With Dad, find <span class="glow">3 things at home that use AI</span>!</span>
+  </p>
+  <div class="card-grid cols-3" style="margin-top:20px">
+    <div class="card" style="cursor:pointer" onclick="this.querySelector('.card-emoji').textContent=this.querySelector('.card-emoji').textContent==='❓'?'✅':'❓'">
+      <div class="card-emoji">❓</div>
+      <div class="card-desc"><span class="cn">第1个</span><span class="en">#1</span></div>
+    </div>
+    <div class="card" style="cursor:pointer" onclick="this.querySelector('.card-emoji').textContent=this.querySelector('.card-emoji').textContent==='❓'?'✅':'❓'">
+      <div class="card-emoji">❓</div>
+      <div class="card-desc"><span class="cn">第2个</span><span class="en">#2</span></div>
+    </div>
+    <div class="card" style="cursor:pointer" onclick="this.querySelector('.card-emoji').textContent=this.querySelector('.card-emoji').textContent==='❓'?'✅':'❓'">
+      <div class="card-emoji">❓</div>
+      <div class="card-desc"><span class="cn">第3个</span><span class="en">#3</span></div>
+    </div>
+  </div>
+  <p style="margin-top:16px;font-size:.85em;color:var(--muted)">
+    <span class="cn">提示：手机、平板、音箱、电视…</span>
+    <span class="en">Hint: phone, tablet, speaker, TV…</span>
+  </p>
+</section>
+
+<!-- Slide 9: Summary -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <h2>
+    <span class="cn">今天学到了 ✨</span>
+    <span class="en">What We Learned ✨</span>
+  </h2>
+  <ul class="summary-list">
+    <li>
+      <span class="num">1</span>
+      <span><span class="cn">AI 是能<span class="glow">学习</span>的机器，和普通机器不同</span><span class="en">AI is a machine that can <span class="glow">learn</span>, unlike regular machines</span></span>
+    </li>
+    <li>
+      <span class="num">2</span>
+      <span><span class="cn">AI 从<span class="glow">数据</span>中学习规律</span><span class="en">AI learns patterns from <span class="glow">data</span></span></span>
+    </li>
+    <li>
+      <span class="num">3</span>
+      <span><span class="cn">AI 就在我们身边，帮我们做很多事</span><span class="en">AI is all around us, helping us every day</span></span>
+    </li>
+    <li>
+      <span class="num">4</span>
+      <span><span class="cn">AI 不是魔法，是人类创造的<span class="glow">工具</span></span><span class="en">AI is not magic — it's a <span class="glow">tool</span> created by humans</span></span>
+    </li>
+  </ul>
+  <p style="margin-top:20px;color:var(--muted);font-size:.9em">
+    <span class="cn">下节课：🧠 AI 怎么学习的</span>
+    <span class="en">Next: 🧠 How Does AI Learn?</span>
+  </p>
+</section>
+
+</div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+Reveal.initialize({
+  hash:true, slideNumber:'c/t', controls:true, progress:false,
+  transition:'fade', transitionSpeed:'fast',
+});
+Reveal.on('slidechanged', e=>{
+  const pct=(e.indexh/(Reveal.getTotalSlides()-1)*100).toFixed(1);
+  document.getElementById('prog-fill').style.width=pct+'%';
+});
+function setLang(l){
+  document.body.className='lang-'+l;
+  document.querySelectorAll('#lang-toggle button').forEach((b,i)=>{
+    b.classList.toggle('active',(i===0&&l==='cn')||(i===1&&l==='en'));
+  });
+  localStorage.setItem('kai-lang',l);
+}
+setLang(localStorage.getItem('kai-lang')||'cn');
+</script>
+</body>
+</html>

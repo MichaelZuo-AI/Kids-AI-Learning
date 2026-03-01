@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>05 · AI 帮我讲故事</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="../theme.css">
+</head>
+<body class="lang-cn">
+
+<a class="back-btn" href="../">← <span class="cn">课程目录</span><span class="en">All Lessons</span></a>
+<div id="lang-toggle">
+  <button class="active" onclick="setLang('cn')">中文</button>
+  <button onclick="setLang('en')">EN</button>
+</div>
+<div id="prog"><div id="prog-fill" style="width:0%"></div></div>
+
+<div class="reveal">
+<div class="slides">
+
+<!-- Slide 1: Title -->
+<section data-background="linear-gradient(135deg,#1a0033 0%,#2d1b69 50%,#4a1a8a 100%)">
+  <div class="badge" style="background:rgba(253,121,168,.4)">
+    <span class="cn">Unit 2 · 第2课</span><span class="en">Unit 2 · Lesson 2</span>
+  </div>
+  <div style="font-size:3.5em;margin:12px 0" class="float">📖</div>
+  <h1>
+    <span class="cn">AI 帮我讲故事</span>
+    <span class="en">AI Tells Stories</span>
+  </h1>
+  <p style="color:var(--muted)">
+    <span class="cn">学会引导 AI，创作属于你的故事</span>
+    <span class="en">Learn to guide AI and create your very own stories</span>
+  </p>
+</section>
+
+<!-- Slide 2: Hook question -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <div style="font-size:2.5em;margin-bottom:16px">🤔</div>
+  <h2>
+    <span class="cn">如果你能让 AI 给你讲一个故事，<br>你希望故事里有什么？</span>
+    <span class="en">If AI could tell you a story,<br>what would you want in it?</span>
+  </h2>
+  <p style="color:var(--muted);margin-top:16px">
+    <span class="cn">一条龙？一个魔法森林？还是你和超梦的冒险？</span>
+    <span class="en">A dragon? A magical forest? Or an adventure with Mewtwo?</span>
+  </p>
+</section>
+
+<!-- Slide 3: Three Story Elements -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <h2>
+    <span class="cn">AI 写故事需要<span class="glow">三要素</span></span>
+    <span class="en">AI Needs <span class="glow">3 Elements</span> to Write a Story</span>
+  </h2>
+  <div class="card-grid cols-3" style="margin-top:20px">
+    <div class="card" style="border-color:rgba(253,121,168,.3)">
+      <div class="card-emoji">👤</div>
+      <div class="card-title"><span class="cn">主角 Hero</span><span class="en">Hero</span></div>
+      <div class="card-desc">
+        <span class="cn">谁是故事的主人公？</span>
+        <span class="en">Who is the main character?</span>
+      </div>
+    </div>
+    <div class="card" style="border-color:rgba(253,121,168,.3)">
+      <div class="card-emoji">🗺️</div>
+      <div class="card-title"><span class="cn">地点 Place</span><span class="en">Place</span></div>
+      <div class="card-desc">
+        <span class="cn">故事发生在哪里？</span>
+        <span class="en">Where does the story happen?</span>
+      </div>
+    </div>
+    <div class="card" style="border-color:rgba(253,121,168,.3)">
+      <div class="card-emoji">⚡</div>
+      <div class="card-title"><span class="cn">事件 Event</span><span class="en">Event</span></div>
+      <div class="card-desc">
+        <span class="cn">发生了什么事？</span>
+        <span class="en">What happens?</span>
+      </div>
+    </div>
+  </div>
+  <p style="margin-top:16px;font-size:.9em;color:var(--muted)">
+    <span class="cn">告诉 AI 这三样东西，它就能给你写故事！</span>
+    <span class="en">Give AI these three things and it can write your story!</span>
+  </p>
+</section>
+
+<!-- Slide 4: Good vs Bad Story Prompt -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <h2>
+    <span class="cn">好提示 vs 坏提示</span>
+    <span class="en">Good Prompt vs Bad Prompt</span>
+  </h2>
+  <div class="card-grid" style="margin-top:20px">
+    <div class="card bad">
+      <div class="card-emoji">❌</div>
+      <div class="card-title"><span class="cn">太模糊</span><span class="en">Too Vague</span></div>
+      <div class="card-desc">
+        <span class="cn">"给我讲个故事"<br><br>AI 不知道你想要什么样的故事…</span>
+        <span class="en">"Tell me a story"<br><br>AI has no idea what kind of story you want…</span>
+      </div>
+    </div>
+    <div class="card good">
+      <div class="card-emoji">✅</div>
+      <div class="card-title"><span class="cn">超清楚</span><span class="en">Super Clear</span></div>
+      <div class="card-desc">
+        <span class="cn">"讲一个 <span class="pink">Damian</span> 和 <span class="pink">Mewtwo</span> 在<span class="pink">冰雪森林</span>里寻找<span class="pink">消失的精灵球</span>的故事"<br><br>AI 知道该怎么写！</span>
+        <span class="en">"Tell a story about <span class="pink">Damian</span> and <span class="pink">Mewtwo</span> searching for a <span class="pink">lost Poké Ball</span> in an <span class="pink">icy forest</span>"<br><br>AI knows exactly what to write!</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 5: Mewtwo Says -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <div class="mewtwo-bubble">
+    <div class="avatar float">🟣</div>
+    <div class="speech">
+      <span class="cn">
+        "我可以是你故事里的伙伴！告诉我你想要什么冒险，我帮你创造它。记住，最好的故事来自你的<span class="glow">想象力</span>！"
+      </span>
+      <span class="en">
+        "I can be your partner in any story! Tell me what adventure you want, and I'll help you create it. Remember, the best stories come from your <span class="glow">imagination</span>!"
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 6: Magic Words to Level Up -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <h2>
+    <span class="cn">让故事更精彩的<span class="glow">魔法词</span></span>
+    <span class="en"><span class="glow">Magic Words</span> to Make Stories Better</span>
+  </h2>
+  <div class="card-grid" style="margin-top:20px">
+    <div class="card" style="border-color:rgba(253,121,168,.3)">
+      <div class="card-emoji">🌪️</div>
+      <div class="card-title"><span class="cn">加入一个惊喜转折</span><span class="en">Add a Twist</span></div>
+      <div class="card-desc"><span class="cn">让故事出现意想不到的变化</span><span class="en">Create an unexpected change</span></div>
+    </div>
+    <div class="card" style="border-color:rgba(253,121,168,.3)">
+      <div class="card-emoji">🏆</div>
+      <div class="card-title"><span class="cn">让结局出人意料</span><span class="en">Surprising Ending</span></div>
+      <div class="card-desc"><span class="cn">结尾让人"哇！"</span><span class="en">An ending that makes you say "Wow!"</span></div>
+    </div>
+    <div class="card" style="border-color:rgba(253,121,168,.3)">
+      <div class="card-emoji">📝</div>
+      <div class="card-title"><span class="cn">帮我续写下一段</span><span class="en">Continue the Story</span></div>
+      <div class="card-desc"><span class="cn">让 AI 接着你的故事写下去</span><span class="en">Let AI keep writing from where you left off</span></div>
+    </div>
+    <div class="card" style="border-color:rgba(253,121,168,.3)">
+      <div class="card-emoji">😂</div>
+      <div class="card-title"><span class="cn">用搞笑的方式写</span><span class="en">Write It Funny</span></div>
+      <div class="card-desc"><span class="cn">让故事充满笑点！</span><span class="en">Make the story hilarious!</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 7: Flip Cards — Story Magic Words -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <h2>
+    <span class="cn">故事魔法词卡 ✨</span>
+    <span class="en">Story Magic Word Cards ✨</span>
+  </h2>
+  <p style="color:var(--muted);margin-bottom:12px;font-size:.85em">
+    <span class="cn">点击翻牌看看怎么用！</span>
+    <span class="en">Tap to flip and see how to use them!</span>
+  </p>
+  <div class="card-grid cols-3" style="margin-top:8px">
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <div style="font-size:1.6em">🌪️</div>
+          <div style="font-weight:700"><span class="cn">转折 Twist</span><span class="en">Twist</span></div>
+        </div>
+        <div class="flip-back">
+          <span class="cn">"在故事中间加一句：'突然，一切都变了...'"</span>
+          <span class="en">"Add this in the middle: 'Suddenly, everything changed...'"</span>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <div style="font-size:1.6em">🏆</div>
+          <div style="font-weight:700"><span class="cn">胜利 Victory</span><span class="en">Victory</span></div>
+        </div>
+        <div class="flip-back">
+          <span class="cn">"让主角在最后关头用智慧赢得胜利"</span>
+          <span class="en">"Have the hero win at the last moment using cleverness"</span>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <div style="font-size:1.6em">😱</div>
+          <div style="font-weight:700"><span class="cn">惊吓 Surprise</span><span class="en">Surprise</span></div>
+        </div>
+        <div class="flip-back">
+          <span class="cn">"加一个谁都没想到的神秘角色出现"</span>
+          <span class="en">"Add a mysterious character no one expected"</span>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <div style="font-size:1.6em">💎</div>
+          <div style="font-weight:700"><span class="cn">宝物 Treasure</span><span class="en">Treasure</span></div>
+        </div>
+        <div class="flip-back">
+          <span class="cn">"在冒险中发现一个有魔法力量的宝物"</span>
+          <span class="en">"Discover a treasure with magical powers during the adventure"</span>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <div style="font-size:1.6em">👿</div>
+          <div style="font-weight:700"><span class="cn">反派 Villain</span><span class="en">Villain</span></div>
+        </div>
+        <div class="flip-back">
+          <span class="cn">"加一个看起来很可怕但其实善良的反派"</span>
+          <span class="en">"Add a villain who seems scary but is actually kind"</span>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <div style="font-size:1.6em">❤️</div>
+          <div style="font-weight:700"><span class="cn">友谊 Friendship</span><span class="en">Friendship</span></div>
+        </div>
+        <div class="flip-back">
+          <span class="cn">"让主角和对手最后成为了好朋友"</span>
+          <span class="en">"Have the hero and rival become best friends in the end"</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 8: Activity — Build Your Story -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <div class="badge" style="background:rgba(253,121,168,.4)">
+    <span class="cn">🎯 互动时间</span><span class="en">🎯 Activity Time</span>
+  </div>
+  <h2>
+    <span class="cn">用 3 张魔法词卡设计你的故事！</span>
+    <span class="en">Design Your Story with 3 Magic Cards!</span>
+  </h2>
+  <div class="card-grid cols-1" style="margin-top:16px">
+    <div class="card" style="border-color:rgba(253,121,168,.3);padding:24px;text-align:left">
+      <p style="font-size:1em;line-height:2">
+        <span class="cn">
+          <strong>第1步：</strong>从上一页选 3 个魔法词卡<br>
+          <strong>第2步：</strong>把它们组合成一个故事提示<br>
+          <strong>第3步：</strong>念给爸爸听<br>
+          <strong>第4步：</strong>让 AI 写出来！
+        </span>
+        <span class="en">
+          <strong>Step 1:</strong> Pick 3 magic word cards from the previous slide<br>
+          <strong>Step 2:</strong> Combine them into a story prompt<br>
+          <strong>Step 3:</strong> Read it to Dad<br>
+          <strong>Step 4:</strong> Let AI write it!
+        </span>
+      </p>
+    </div>
+  </div>
+  <p style="margin-top:14px;font-size:.85em;color:var(--muted)">
+    <span class="cn">比如：讲一个有「转折」+「宝物」+「友谊」的冒险故事！</span>
+    <span class="en">Example: Tell an adventure story with "Twist" + "Treasure" + "Friendship"!</span>
+  </p>
+</section>
+
+<!-- Slide 9: Summary -->
+<section data-background="linear-gradient(135deg,#1a0033,#2d1b69)">
+  <h2>
+    <span class="cn">今天学到了 ✨</span>
+    <span class="en">What We Learned ✨</span>
+  </h2>
+  <ul class="summary-list">
+    <li>
+      <span class="num">1</span>
+      <span><span class="cn">AI 写故事需要<span class="glow">三要素</span>：主角 + 地点 + 事件</span><span class="en">AI needs <span class="glow">3 elements</span> for a story: Hero + Place + Event</span></span>
+    </li>
+    <li>
+      <span class="num">2</span>
+      <span><span class="cn">描述越<span class="glow">具体</span>，AI 写得越精彩</span><span class="en">The more <span class="glow">specific</span> your description, the better AI writes</span></span>
+    </li>
+    <li>
+      <span class="num">3</span>
+      <span><span class="cn">用<span class="glow">魔法词</span>让故事更有趣：转折、惊喜、搞笑…</span><span class="en">Use <span class="glow">magic words</span> to make stories exciting: twists, surprises, humor…</span></span>
+    </li>
+    <li>
+      <span class="num">4</span>
+      <span><span class="cn">最好的故事来自你的<span class="glow">想象力</span>，AI 只是帮你写出来</span><span class="en">The best stories come from your <span class="glow">imagination</span>, AI just helps write them down</span></span>
+    </li>
+  </ul>
+  <p style="margin-top:20px;color:var(--muted);font-size:.9em">
+    <span class="cn">下节课：💡 AI 回答我的问题</span>
+    <span class="en">Next: 💡 AI Answers My Questions</span>
+  </p>
+</section>
+
+</div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+Reveal.initialize({
+  hash:true, slideNumber:'c/t', controls:true, progress:false,
+  transition:'fade', transitionSpeed:'fast',
+});
+Reveal.on('slidechanged', e=>{
+  const pct=(e.indexh/(Reveal.getTotalSlides()-1)*100).toFixed(1);
+  document.getElementById('prog-fill').style.width=pct+'%';
+});
+function setLang(l){
+  document.body.className='lang-'+l;
+  document.querySelectorAll('#lang-toggle button').forEach((b,i)=>{
+    b.classList.toggle('active',(i===0&&l==='cn')||(i===1&&l==='en'));
+  });
+  localStorage.setItem('kai-lang',l);
+}
+setLang(localStorage.getItem('kai-lang')||'cn');
+</script>
+</body>
+</html>

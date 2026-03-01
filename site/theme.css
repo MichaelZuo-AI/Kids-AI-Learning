@@ -1,0 +1,215 @@
+/* === Kids AI Learning — Shared Theme === */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;600;700;900&display=swap');
+
+:root {
+  --bg: #07001a;
+  --glow: #e056fd;
+  --blue: #74b9ff;
+  --gold: #f9ca24;
+  --green: #55efc4;
+  --pink: #fd79a8;
+  --muted: rgba(240,230,255,.45);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* === Language Toggle === */
+body.lang-en .cn { display: none !important; }
+body.lang-cn .en { display: none !important; }
+
+/* === Nav Bar === */
+.back-btn {
+  position: fixed; top: 12px; left: 14px; z-index: 100;
+  color: var(--muted); text-decoration: none; font-size: .85rem;
+  transition: color .2s;
+}
+.back-btn:hover { color: #fff; }
+
+#lang-toggle {
+  position: fixed; top: 10px; right: 14px; z-index: 100;
+  display: flex; gap: 4px;
+}
+#lang-toggle button {
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15);
+  color: var(--muted); padding: 4px 10px; border-radius: 6px;
+  cursor: pointer; font-size: .75rem; transition: all .2s;
+}
+#lang-toggle button.active {
+  background: var(--glow); color: #fff; border-color: var(--glow);
+}
+
+/* === Progress Bar === */
+#prog {
+  position: fixed; top: 0; left: 0; width: 100%; height: 3px;
+  background: rgba(255,255,255,.08); z-index: 100;
+}
+#prog-fill {
+  height: 100%; background: linear-gradient(90deg, var(--glow), var(--blue));
+  transition: width .3s;
+}
+
+/* === Reveal Overrides === */
+.reveal { font-family: 'Noto Sans SC', sans-serif; }
+.reveal .slides section {
+  display: flex !important; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 60px 24px 40px; text-align: center;
+}
+.reveal h1, .reveal h2, .reveal h3, .reveal p, .reveal li { color: #fff; text-shadow: none; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; margin-bottom: .3em; }
+.reveal h2 { font-size: 1.7em; font-weight: 700; margin-bottom: .3em; }
+.reveal h3 { font-size: 1.2em; font-weight: 600; }
+.reveal p { font-size: 1.05em; line-height: 1.7; }
+.reveal ul { list-style: none; padding: 0; }
+
+/* === Badge === */
+.badge {
+  display: inline-block; padding: 6px 16px; border-radius: 20px;
+  font-size: .8em; font-weight: 700; margin-bottom: 12px;
+  backdrop-filter: blur(8px);
+}
+
+/* === Glow text === */
+.glow { color: var(--glow); font-weight: 700; }
+.blue { color: var(--blue); }
+.gold { color: var(--gold); }
+.green { color: var(--green); }
+.pink { color: var(--pink); }
+
+/* === Cards === */
+.card-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 14px; max-width: 560px; width: 100%; margin: 16px auto;
+}
+.card-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.card-grid.cols-1 { grid-template-columns: 1fr; }
+
+.card {
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+  border-radius: 16px; padding: 18px 14px; text-align: center;
+  transition: all .25s;
+}
+.card:hover { background: rgba(255,255,255,.1); transform: translateY(-2px); }
+.card .card-emoji { font-size: 2em; display: block; margin-bottom: 8px; }
+.card .card-title { font-size: 1em; font-weight: 700; margin-bottom: 4px; }
+.card .card-desc { font-size: .82em; color: var(--muted); line-height: 1.4; }
+
+/* Good/Bad comparison cards */
+.card.good { border-color: rgba(85,239,196,.3); background: rgba(85,239,196,.08); }
+.card.bad { border-color: rgba(253,121,168,.3); background: rgba(253,121,168,.08); }
+
+/* === Mewtwo Speech Bubble === */
+.mewtwo-bubble {
+  display: flex; align-items: flex-start; gap: 14px;
+  background: rgba(224,86,253,.1); border: 1px solid rgba(224,86,253,.25);
+  border-radius: 20px; padding: 18px 22px;
+  max-width: 540px; width: 100%; margin: 16px auto;
+  text-align: left;
+}
+.mewtwo-bubble .avatar { font-size: 2.4em; flex-shrink: 0; }
+.mewtwo-bubble .speech { font-size: .95em; line-height: 1.6; color: rgba(255,255,255,.9); }
+
+/* === Flip Card === */
+.flip-card {
+  perspective: 800px; cursor: pointer; min-height: 120px;
+}
+.flip-inner {
+  position: relative; width: 100%; height: 100%; min-height: 120px;
+  transition: transform .5s; transform-style: preserve-3d;
+}
+.flip-card.flipped .flip-inner { transform: rotateY(180deg); }
+.flip-front, .flip-back {
+  position: absolute; width: 100%; height: 100%; min-height: 120px;
+  backface-visibility: hidden; border-radius: 16px; padding: 16px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 6px; border: 1px solid rgba(255,255,255,.12);
+}
+.flip-front { background: rgba(255,255,255,.06); }
+.flip-back {
+  background: rgba(224,86,253,.15); transform: rotateY(180deg);
+  font-size: .88em; line-height: 1.5; text-align: center;
+}
+
+/* === Prompt Builder === */
+.prompt-builder {
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
+  border-radius: 16px; padding: 20px; max-width: 520px; width: 100%;
+  font-size: 1.05em; line-height: 2.2; text-align: left; margin: 12px auto;
+}
+.prompt-builder input {
+  background: rgba(255,255,255,.1); border: 1px dashed var(--glow);
+  border-radius: 8px; padding: 4px 10px; color: #fff; font-size: .95em;
+  outline: none; width: auto; min-width: 80px; max-width: 140px;
+  font-family: inherit; transition: border-color .2s;
+}
+.prompt-builder input:focus { border-color: var(--gold); border-style: solid; }
+.prompt-builder input::placeholder { color: var(--muted); font-size: .85em; }
+
+/* === Buttons === */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 12px 28px; border-radius: 14px; font-size: 1em; font-weight: 700;
+  border: none; cursor: pointer; color: #fff; transition: all .2s;
+  user-select: none; -webkit-tap-highlight-color: transparent;
+  font-family: inherit;
+}
+.btn:active { transform: scale(.95); }
+.btn-glow { background: var(--glow); }
+.btn-glow:hover { background: #c944e0; }
+.btn-blue { background: var(--blue); color: #07001a; }
+.btn-gold { background: var(--gold); color: #07001a; }
+.btn-green { background: var(--green); color: #07001a; }
+
+/* === Summary List === */
+.summary-list {
+  list-style: none; padding: 0; max-width: 480px; width: 100%;
+  text-align: left; margin: 12px auto;
+}
+.summary-list li {
+  padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,.08);
+  font-size: .95em; display: flex; align-items: center; gap: 10px;
+}
+.summary-list li .num {
+  background: var(--glow); color: #fff; width: 26px; height: 26px;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: .75em; font-weight: 700; flex-shrink: 0;
+}
+
+/* === Unit Complete === */
+.unit-complete {
+  background: rgba(249,202,36,.08); border: 1px solid rgba(249,202,36,.25);
+  border-radius: 20px; padding: 24px; max-width: 480px; width: 100%;
+  margin: 12px auto;
+}
+.unit-complete .check-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 0; font-size: .95em;
+}
+.unit-complete .check-item .tick { color: var(--green); font-weight: 700; }
+
+/* === Animations === */
+@keyframes fade-up { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+@keyframes pop { 0%{ transform:scale(.3);opacity:0 } 60%{ transform:scale(1.1) } 100%{ transform:scale(1);opacity:1 } }
+@keyframes float { 0%,100%{ transform:translateY(0) } 50%{ transform:translateY(-10px) } }
+@keyframes confetti { 0%{ transform:translateY(-100vh) rotate(0); opacity:1 } 100%{ transform:translateY(100vh) rotate(720deg); opacity:0 } }
+
+.fade-up { animation: fade-up .5s ease-out both; }
+.pop { animation: pop .5s ease-out both; }
+.float { animation: float 3s ease-in-out infinite; }
+
+/* === Responsive === */
+@media (max-width: 600px) {
+  .reveal h1 { font-size: 1.7em; }
+  .reveal h2 { font-size: 1.3em; }
+  .card-grid { gap: 10px; }
+  .card { padding: 14px 10px; }
+  .mewtwo-bubble { padding: 14px 16px; }
+  .prompt-builder { padding: 14px; font-size: .95em; }
+}
